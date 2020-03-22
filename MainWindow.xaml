@@ -1,0 +1,13 @@
+﻿<Window x:Class="flightSimulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls ="clr-namespace:flightSimulator.controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="x1" Content="hi!" FontSize="30"/>
+        <Button x:Name="x2" Content="press me" Width="100" Height="40" Click="x2_Click" />
+    </Grid>
+</Window>
