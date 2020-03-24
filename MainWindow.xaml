@@ -9,5 +9,7 @@
     <Grid>
         <Label x:Name="x1" Content="hi!" FontSize="30"/>
         <Button x:Name="x2" Content="press me" Width="100" Height="40" Click="x2_Click" />
+        <Controls:UserControl1></Controls:UserControl1>
+        
     </Grid>
 </Window>

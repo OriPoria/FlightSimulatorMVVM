@@ -42,7 +42,6 @@ namespace flightSimulator
                         builder.Append("get ").Append(myFlightObjects[i].Sim);
                         myTelnetClient.write(builder.ToString());
                         string s = myTelnetClient.read();
-                        s = stringLexing(s);
                         myFlightObjects[i].Value = Double.Parse(s);
                         NotifyPropertyChanged(myFlightObjects[i].Name);
                         builder.Clear();
