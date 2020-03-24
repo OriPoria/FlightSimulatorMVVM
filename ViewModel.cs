@@ -9,6 +9,7 @@ namespace flightSimulator
     public class ViewModel : INotifyPropertyChanged
     {
         private Model myModel;
+        private SimulatorObject[] VM_objects;
         public ViewModel(Model m)
         {
             this.myModel = m;
