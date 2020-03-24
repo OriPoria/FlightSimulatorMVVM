@@ -48,13 +48,18 @@ namespace flightSimulator
         //this function enrolled the event of property changed and need to deal with it
         public void test11 (Object o, PropertyChangedEventArgs e)
         {
-            this.Dispatcher.Invoke(() => { x1.Content = "hello"; });    
+            this.Dispatcher.Invoke(() => { x1.Content = x1.Content+ e.ToString(); });    
         }
 
         private void x2_Click(object sender, RoutedEventArgs e)
         {
             Thread thread = new Thread(myFilght.start);
             thread.Start();
+        }
+
+        private void x3_Click(object sender, RoutedEventArgs e)
+        {
+            myFilght.disconnect();
         }
     }
 }

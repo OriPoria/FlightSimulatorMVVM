@@ -20,9 +20,30 @@ namespace flightSimulator.controls
     /// </summary>
     public partial class UserControl1 : UserControl
     {
+        bool isMouseDown = false;
         public UserControl1()
         {
             InitializeComponent();
         }
+
+        private void Knob_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            x1.Content = "step1";
+            isMouseDown = true;
+        }
+
+        private void Knob_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+                x1.Content = "step2";
+
+        }
+
+        private void Knob_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+                x1.Content = "step0";
+                isMouseDown = false;
+        }   
     }
+
 }

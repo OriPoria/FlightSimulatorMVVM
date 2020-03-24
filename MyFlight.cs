@@ -9,7 +9,6 @@ namespace flightSimulator
 {
     class MyFlight : IFlightModel
     {
-
         private SimulatorObject[] myFlightObjects;
 
         private ITelnetClient myTelnetClient;
@@ -42,7 +41,6 @@ namespace flightSimulator
                         builder.Append("get ").Append(myFlightObjects[i].Sim);
                         myTelnetClient.write(builder.ToString());
                         string s = myTelnetClient.read();
-                        s = stringLexing(s);
                         myFlightObjects[i].Value = Double.Parse(s);
                         NotifyPropertyChanged(myFlightObjects[i].Name);
                         builder.Clear();
@@ -65,29 +63,7 @@ namespace flightSimulator
             }
         }
 
-        public string stringLexing(string myString)
-        {
-            int l = myString.Length;
 
-            int i = 0;
-            int endIndex = 0;
-            for (i = l - 1; i > 0; i--)
-            {
-                if (Char.IsNumber(myString[i]))
-                {
-                    endIndex = i + 1;
-                    while (Char.IsNumber(myString[i]) || myString[i] == '.' || myString[i] == '-' || myString[i] == 'e')
-                    {
-                        i--;
-                    }
-                    i++;
-                    break;
-                }
-            }
-            myString = myString.Substring(i, endIndex - i);
-            return myString;
-
-        }
         private void initializeObjects()
         {
             myFlightObjects = new SimulatorObject[] 

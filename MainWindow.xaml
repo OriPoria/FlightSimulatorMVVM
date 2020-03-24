@@ -7,7 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="x1" Content="hi!" FontSize="30"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="x1" Content="hi!" FontSize="12"/>
         <Button x:Name="x2" Content="press me" Width="100" Height="40" Click="x2_Click" />
+        <Button x:Name="x3" Content="STOP" VerticalAlignment="Bottom" Width="100" Height="40" Click="x3_Click" />
+        <Controls:UserControl1 Grid.Column="1" />
     </Grid>
 </Window>

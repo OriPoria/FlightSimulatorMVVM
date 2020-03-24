@@ -9,7 +9,6 @@ namespace flightSimulator
     public interface IFlightModel : INotifyPropertyChanged
     {
         void connect(string ip, int port);
-
         void disconnect();
         void start();
 
