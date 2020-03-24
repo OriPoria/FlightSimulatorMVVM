@@ -17,7 +17,7 @@ namespace flightSimulator
         }
         public void update(Object o, PropertyChangedEventArgs e)
         {
-            //do something after you get the change from the model
+            
 
         }
         public event PropertyChangedEventHandler PropertyChanged;
