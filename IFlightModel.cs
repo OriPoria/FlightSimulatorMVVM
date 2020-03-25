@@ -11,7 +11,6 @@ namespace flightSimulator
         void connect(string ip, int port);
         void disconnect();
         void start();
-
-
+        double getData(string proName);
     }
 }

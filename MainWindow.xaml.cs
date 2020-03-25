@@ -48,7 +48,11 @@ namespace flightSimulator
         //this function enrolled the event of property changed and need to deal with it
         public void test11 (Object o, PropertyChangedEventArgs e)
         {
-            this.Dispatcher.Invoke(() => { x1.Content = x1.Content+ e.ToString(); });    
+            if (e.ToString() == "roll")
+            {
+                this.Dispatcher.Invoke(() => { x1.Content = myFilght.getData("roll"); });
+
+            }
         }
 
         private void x2_Click(object sender, RoutedEventArgs e)

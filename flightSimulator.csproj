@@ -61,14 +61,14 @@
     <Compile Include="INotifyPropertyChanged.cs" />
     <Compile Include="IFlightModel.cs" />
     <Compile Include="ITelnetClient.cs" />
-    <Compile Include="Model.cs" />
     <Compile Include="MyFlight.cs" />
     <Compile Include="MyTelnetClient.cs" />
     <Compile Include="PropertyChangedEventArgs.cs" />
     <Compile Include="SimulatorObject.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="View.cs" />
-    <Compile Include="ViewModel.cs" />
+    <Compile Include="ViewModel\DashboardViewModel.cs" />
+    <Compile Include="ViewModel\MapViewModel.cs" />
+    <Compile Include="ViewModel\SteeringViewModel .cs" />
     <Page Include="controls\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
