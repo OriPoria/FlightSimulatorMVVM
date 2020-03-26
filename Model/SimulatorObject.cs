@@ -11,7 +11,6 @@ namespace flightSimulator
         private string name;
         private string sim;
         private double val;
-        private IFlightModel myFlight;
         public SimulatorObject(string n, string s)
         {
             this.name = n;
