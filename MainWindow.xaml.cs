@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.Threading;
 
 
-
 namespace flightSimulator
 {
     /// <summary>
@@ -25,6 +24,7 @@ namespace flightSimulator
     {
 
         IFlightModel myFilght;
+        firstPageOfApp firstPageOfApp;
 
         public MainWindow()
         {
@@ -32,41 +32,13 @@ namespace flightSimulator
             INotifyPropertyChanged user = new User();
             ITelnetClient telnetClient = new MyTelnetClient();
             IFlightModel flightModel = new MyFlight(telnetClient);
-            flightModel.PropertyChanged += test11; // test
-            flightModel.connect("127.0.0.1", 5402);
+   
+            flightModel.connect(firstPageOfApp.ip_textbox.Text, 5402);
             myFilght = flightModel;
             
-            
 
 
         }
-        
 
-
-
-
-
-
-        //this function enrolled the event of property changed and need to deal with it
-        public void test11 (Object o, PropertyChangedEventArgs e)
-        {
-            if (e.ToString() == "roll")
-            {
-                DashboardViewModel m = new DashboardViewModel(myFilght);   
-                this.Dispatcher.Invoke(() => { x1.Content = m.VM_roll; });
-
-            }
-        }
-
-        private void x2_Click(object sender, RoutedEventArgs e)
-        {
-            Thread thread = new Thread(myFilght.start);
-            thread.Start();
-        }
-
-        private void x3_Click(object sender, RoutedEventArgs e)
-        {
-            myFilght.disconnect();
-        }
     }
 }
