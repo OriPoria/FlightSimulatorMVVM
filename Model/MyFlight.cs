@@ -12,7 +12,12 @@ namespace flightSimulator
         private SimulatorObject[] readFlightObjects;
         private SimulatorObject[] writeFlightObjects;
         private Dictionary<string, int> hash = new Dictionary<string, int>();
+        private Queue<string> queueCommands = new Queue<string>();
 
+        private double throttle;
+        private double rudder;
+        private double elevator;
+        private double aileron;
 
         private ITelnetClient myTelnetClient;
         private volatile Boolean stop;
@@ -50,6 +55,11 @@ namespace flightSimulator
                         
 
                     }
+                    //send all the commands from the queue to the simulator and remove the item from the queue
+                    while (queueCommands.Count > 0)
+                    {
+                    myTelnetClient.write(queueCommands.Dequeue());
+                    }
 
 
 
@@ -58,7 +68,50 @@ namespace flightSimulator
                     
 
         }
+        public double Throttle
+        {
+            get{ return throttle; }
+            set{ addCommand("set /controls/engines/current-engine/throttle " + value);
+                this.throttle = value;
+                NotifyPropertyChanged("throttle");
+            }
+        }
+        public double Rudder
+        {
+            get { return rudder; }
+            set {
+                addCommand("set /controls/flight/rudder " + value);
+                this.rudder = value;
+                NotifyPropertyChanged("rudder");
 
+            }
+        }
+        public double Elevator
+        {
+            get
+            { return elevator;
+            }
+            set
+            {   addCommand("set /controls/flight/elevator " + value);
+                this.elevator = value;
+                NotifyPropertyChanged("elevator");
+
+            }
+        }
+        public double Aileron
+        {
+            get
+            {
+                return aileron;
+            }
+            set
+            {
+                addCommand("set /controls/flight/aileron " + value);
+                this.aileron = value;
+                NotifyPropertyChanged("aileron");
+
+            }
+        }
 
         public void NotifyPropertyChanged(string proName)
         {
@@ -71,7 +124,10 @@ namespace flightSimulator
         {
             return readFlightObjects[hash[str]].Value;
         }
-
+        public void addCommand(string command)
+        {
+            queueCommands.Enqueue(command);
+        }
 
         private void initializeObjects()
         {

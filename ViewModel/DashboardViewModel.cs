@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace flightSimulator.ViewModel
+namespace flightSimulator
 {
     public class DashboardViewModel : INotifyPropertyChanged
     {
         private IFlightModel myModel;
-        DashboardViewModel(IFlightModel m)
+        public DashboardViewModel(IFlightModel m)
         {
             this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
@@ -64,7 +64,10 @@ namespace flightSimulator.ViewModel
 
         public void NotifyPropertyChanged(string propName)
         {
-
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
         }
     }
 

@@ -59,12 +59,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="INotifyPropertyChanged.cs" />
-    <Compile Include="IFlightModel.cs" />
-    <Compile Include="ITelnetClient.cs" />
-    <Compile Include="MyFlight.cs" />
-    <Compile Include="MyTelnetClient.cs" />
+    <Compile Include="Model\IFlightModel.cs" />
+    <Compile Include="Model\ITelnetClient.cs" />
+    <Compile Include="Model\MyFlight.cs" />
+    <Compile Include="Model\MyTelnetClient.cs" />
+    <Compile Include="Model\SimulatorObject.cs" />
     <Compile Include="PropertyChangedEventArgs.cs" />
-    <Compile Include="SimulatorObject.cs" />
     <Compile Include="User.cs" />
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />

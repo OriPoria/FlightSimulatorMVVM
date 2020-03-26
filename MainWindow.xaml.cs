@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Threading;
 
 
+
 namespace flightSimulator
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace flightSimulator
             flightModel.connect("127.0.0.1", 5402);
             myFilght = flightModel;
             
+            
 
 
         }
@@ -50,7 +52,8 @@ namespace flightSimulator
         {
             if (e.ToString() == "roll")
             {
-                this.Dispatcher.Invoke(() => { x1.Content = myFilght.getData("roll"); });
+                DashboardViewModel m = new DashboardViewModel(myFilght);   
+                this.Dispatcher.Invoke(() => { x1.Content = m.VM_roll; });
 
             }
         }

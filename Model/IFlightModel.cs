@@ -12,5 +12,12 @@ namespace flightSimulator
         void disconnect();
         void start();
         double getData(string proName);
+        void addCommand(string command);
+
+        double Throttle { set; get; }
+        double Rudder { set; get; }
+        double Aileron { set; get; }
+        double Elevator { set; get; }
+
     }
 }

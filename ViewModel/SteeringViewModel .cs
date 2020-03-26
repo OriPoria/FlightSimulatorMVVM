@@ -4,58 +4,68 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace flightSimulator.ViewModel
+namespace flightSimulator
 {
     class SteeringViewModel : INotifyPropertyChanged
     {
         private IFlightModel myModel;
-        SteeringViewModel(IFlightModel m)
+
+        private double throttle;
+        private double rudder;
+        private double elevator;
+        private double aileron;
+        public SteeringViewModel(IFlightModel m)
         {
             this.myModel = m;
 
         }
 
-        public double VM_throttle
+        public double VM_Throttle
         {
             get
             {
-                return 0;
+                return throttle ;
             }
             set
             {
-
+                throttle = value;
+                myModel.Throttle = throttle;
             }
         }
-        public double VM_rudder
+        public double VM_Rudder
         {
             get
             {
-                return 0;
+                return rudder;
             }
             set
             {
-
+                rudder = value;
+                myModel.Rudder = rudder;
             }
         }
-        public double VM_elevator
+        public double VM_Elevator
         {
             get
             {
-                return 0;
+                return elevator;
             }
             set
             {
-
+                elevator = value;
+                myModel.Elevator = elevator;
             }
         }
-        public double VM_aileron
+        public double VM_Aileron
         {
             get
             {
-                return 0;
+                return aileron;
             }
             set
             {
+                aileron = value;
+                myModel.Aileron = aileron;
 
             }
         }
