@@ -11,7 +11,7 @@
             <Ellipse HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="340">
                 <Ellipse.Fill>
                     <RadialGradientBrush>
-                        <GradientStop Color="#FF2C2A2A" Offset="1" />
+                        <GradientStop Color="#FF2C2A2A" Offset="1"  />
                         <GradientStop Color="#FF3A3737" />
                     </RadialGradientBrush>
                 </Ellipse.Fill>
