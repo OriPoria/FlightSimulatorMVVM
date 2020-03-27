@@ -24,16 +24,15 @@ namespace flightSimulator
     {
 
         IFlightModel myFilght;
-        firstPageOfApp firstPageOfApp;
+        //firstPageOfApp firstPageOfApp;
 
         public MainWindow()
         {
             InitializeComponent();
-            INotifyPropertyChanged user = new User();
             ITelnetClient telnetClient = new MyTelnetClient();
             IFlightModel flightModel = new MyFlight(telnetClient);
    
-            flightModel.connect(firstPageOfApp.ip_textbox.Text, 5402);
+            //flightModel.connect(firstPageOfApp.ip_textbox.Text, 5402);
             myFilght = flightModel;
             
 
