@@ -29,13 +29,21 @@ namespace flightSimulator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            this.NavigationService.Navigate(new SimulatorPage());
+            int port = Int32.Parse(this.port_text_box.Text);
+            // this.NavigationService.Navigate(new MainWindow(this.ip_textbox.Text,port));
+            // this.NavigationService.Navigate(new SimulatorPage());
+
+            MainWindow mainWindow = new MainWindow(this.ip_textbox.Text, port);
+            mainWindow.ShowDialog();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
         {
-            
+            //this.NavigationService.Navigate(new MainWindow("127.0.0.1", 5402));
+            MainWindow mainWindow = new MainWindow("127.0.0.1", 5402);
+            mainWindow.ShowDialog();
         }
     }
 }

@@ -12,31 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Threading;
 
-
-namespace flightSimulator
+namespace flightSimulator.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for shmuPageTest.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class shmuPageTest : Page
     {
-
-        IFlightModel myFilght;
-
-        public MainWindow(string ip, int port)
+        public shmuPageTest()
         {
             InitializeComponent();
-            ITelnetClient telnetClient = new MyTelnetClient();
-            IFlightModel flightModel = new MyFlight(telnetClient);
-   
-            flightModel.connect(ip, port);
-            myFilght = flightModel;
-            
-
-
         }
-
     }
 }

@@ -78,6 +78,9 @@
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\SteeringViewModel .cs" />
+    <Compile Include="View\shmuPageTest.xaml.cs">
+      <DependentUpon>shmuPageTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SimulatorPage.xaml.cs">
       <DependentUpon>SimulatorPage.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\shmuPageTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SimulatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

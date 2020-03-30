@@ -10,10 +10,11 @@
 
     <Grid>
         <Label Content="insert port" HorizontalAlignment="Left" Margin="138,110,0,0" VerticalAlignment="Top" Height="56" Width="169" FontSize="30"/>
-        <TextBox x:Name="port_text_box" HorizontalAlignment="Left" Height="74" Margin="307,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="port_text_box" HorizontalAlignment="Left" Height="74" Margin="307,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" />
         <Label Content="insert ip" HorizontalAlignment="Left" Margin="138,271,0,0" VerticalAlignment="Top" Height="56" Width="169" FontSize="30"/>
-        <TextBox x:Name="ip_textbox" HorizontalAlignment="Left" Height="74" Margin="307,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" TextChanged="TextBox_TextChanged"/>
-        <Button x:Name="button1" Content="start" HorizontalAlignment="Left" Margin="233,404,0,0" VerticalAlignment="Top" Width="187" Height="53" Click="Button_Click" FontSize="30"/>
+        <TextBox x:Name="ip_textbox" HorizontalAlignment="Left" Height="74" Margin="307,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308"/>
+        <Button x:Name="button_start" Content="start" HorizontalAlignment="Left" Margin="233,404,0,0" VerticalAlignment="Top" Width="187" Height="53" Click="Button_Click" FontSize="30"/>
+        <Button x:Name="button_default" Content="default" HorizontalAlignment="Left" Margin="447,404,0,0" VerticalAlignment="Top" Width="187" Height="53" Click="Button_Click2" FontSize="30"/>
 
     </Grid>
 
