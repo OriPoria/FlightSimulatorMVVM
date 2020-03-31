@@ -12,32 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Threading;
-
 
 namespace flightSimulator
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DashBoard3.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DashBoard3 : UserControl
     {
-
-        IFlightModel myFilght;
-
-        public MainWindow(string ip, int port)
+        public DashBoard3()
         {
             InitializeComponent();
-            ITelnetClient telnetClient = new MyTelnetClient();
-            IFlightModel flightModel = new MyFlight(telnetClient);
-   
-            flightModel.connect(ip, port);
-            myFilght = flightModel;
-            
-
-
         }
-
-   
     }
 }

@@ -26,7 +26,7 @@
 
 
         </m:Map>
-        <Viewbox>
+        <Viewbox Margin="0,408,0,324">
             <Image Source="{StaticResource airplaneicon}" Height="12" Width="263">
 
             </Image>

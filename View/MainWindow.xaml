@@ -5,25 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:Controls ="clr-namespace:flightSimulator.controls"
+        xmlns:u="clr-namespace:flightSimulator.View.controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1300" Width="800">
+        Title="MainWindow" Height="1000" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="489*"/>
+            <ColumnDefinition Width="305*"/>
+        </Grid.ColumnDefinitions>
 
+        <Viewbox  HorizontalAlignment="Left" Height="600" Margin="89.2,439,-22.4,-53.4" VerticalAlignment="Top" Width="238" Grid.Column="1"/>
+        <u:DashBoard x:Name="dash" Height="638" Width="687" HorizontalAlignment="Right" VerticalAlignment="Top" Loaded="dash_Loaded" Margin="0,474,24.6,-141.6" Grid.ColumnSpan="2"/>
 
-        <Viewbox HorizontalAlignment="Left" Height="240" Margin="524,439,0,0" VerticalAlignment="Top" Width="238">
-            <Controls:UserControl1 Height="801" Width="652"/>
+        <Viewbox HorizontalAlignment="Left" Height="240" Margin="89.2,731,-22.4,0" VerticalAlignment="Top" Width="238" Grid.Column="1">
+            <Controls:UserControl1 Height="600" Width="652" RenderTransformOrigin="0.41,0.418" Loaded="UserControl1_Loaded"/>
 
 
         </Viewbox>
-        <Slider HorizontalAlignment="Left" Height="28" Margin="552,703,0,0" VerticalAlignment="Top" Width="178" Background="Red"/>
-        <Slider HorizontalAlignment="Left" Height="162" Margin="483,494,0,0" VerticalAlignment="Top" Width="36" Background="Blue"/>
+        <Slider HorizontalAlignment="Left" Height="28" Margin="115.2,934,0,0" VerticalAlignment="Top" Width="178" Background="Red" Grid.Column="1"/>
+        <Slider HorizontalAlignment="Left" Height="162" Margin="89.2,757,0,0" VerticalAlignment="Top" Width="36" Background="Blue" Grid.Column="1" ValueChanged="Slider_ValueChanged"/>
 
-        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Aerial" Margin="15,134,310.6,10.4">
-
-
-
-        </m:Map>
-        <Viewbox>
+        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Aerial" Margin="10,408,95.8,51.4"/>
+        <Viewbox Margin="82,584,63.8,311.4">
             <Image Source="{StaticResource airplaneicon}" Height="12" Width="263">
 
             </Image>
