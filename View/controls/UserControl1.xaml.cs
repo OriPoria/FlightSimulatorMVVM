@@ -20,10 +20,13 @@ namespace flightSimulator.controls
     /// </summary>
     public partial class UserControl1 : UserControl
     {
+        ViewModel steeringVM;
+
         public UserControl1()
         {
             InitializeComponent();
         }
+
         private void centerKnob_Completed(object sender,EventArgs e) { }
         private Point firstPoint = new Point();
 

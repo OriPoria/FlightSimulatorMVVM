@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace flightSimulator
 {
-    class MapViewModel : INotifyPropertyChanged
+    class MapViewModel : ViewModel
     {
-        private IFlightModel myModel;
-        public MapViewModel(IFlightModel m)
+        
+        public MapViewModel(IFlightModel ifm)
         {
-            this.myModel = m;
+            this.myModel = ifm;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                NotifyPropertyChanged("VM_" + e.ToString());
+                NotifyPropertyChanged("VM_" + e.PropertyName);
             };
 
         }
@@ -22,7 +23,12 @@ namespace flightSimulator
         {
             get
             {
+                double i = myModel.getData("latitude");
                 return myModel.getData("latitude");
+            }
+            set
+            {
+
             }
         }
         public double VM_longitude
@@ -34,14 +40,10 @@ namespace flightSimulator
 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
 
-        }
+
+
+
+
     }
 }

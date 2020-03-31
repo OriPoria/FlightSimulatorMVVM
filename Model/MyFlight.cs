@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace flightSimulator
 {
@@ -14,7 +15,7 @@ namespace flightSimulator
         private Dictionary<string, int> hash = new Dictionary<string, int>();
         private Queue<string> queueCommands = new Queue<string>();
 
-        private double throttle;
+        private double throttle;    
         private double rudder;
         private double elevator;
         private double aileron;
@@ -25,7 +26,7 @@ namespace flightSimulator
         public event PropertyChangedEventHandler PropertyChanged;
         public MyFlight(ITelnetClient tc)
         {
-            this.myTelnetClient = tc;
+            this.myTelnetClient = tc;   
             initializeObjects();
         }
         public void connect(string ip, int port)
@@ -116,7 +117,7 @@ namespace flightSimulator
         public void NotifyPropertyChanged(string proName)
         {
             if (this.PropertyChanged != null)
-            {
+            {   
                 this.PropertyChanged(this, new PropertyChangedEventArgs(proName));
             }
         }

@@ -15,25 +15,17 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 
 
-namespace flightSimulator
+namespace flightSimulator.controls
 {
     /// <summary>
-    /// Interaction logic for SimulatorPage.xaml
+    /// Interaction logic for DashBoard.xaml
     /// </summary>
-    public partial class SimulatorPage 
+    public partial class DashBoard : UserControl
     {
-        public SimulatorPage()
+        ViewModel dashBoardVM;
+        public DashBoard()
         {
             InitializeComponent();
-
         }
-
-
-        public void setMapVM(ViewModel viewModel)
-        {
-            DataContext = viewModel;
-        }
-
-
     }
 }

@@ -10,32 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace flightSimulator
+namespace flightSimulator.View
 {
     /// <summary>
-    /// Interaction logic for firstPageOfApp.xaml
+    /// Interaction logic for FirstPage.xaml
     /// </summary>
-    public partial class firstPageOfApp : Page
+    public partial class FirstPage : Page
     {
-        public firstPageOfApp()
+        private MainWindow mainWindow;
+        public FirstPage(MainWindow mw)
         {
+            this.mainWindow = mw;
             InitializeComponent();
         }
-
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            this.NavigationService.Navigate(new SimulatorPage());
+            mainWindow.mainWin.Content = new SimulatorPage();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
         }
     }
 }

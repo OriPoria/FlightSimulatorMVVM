@@ -6,28 +6,10 @@
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:Controls ="clr-namespace:flightSimulator.controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1300" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-
-
-        <Viewbox HorizontalAlignment="Left" Height="240" Margin="524,439,0,0" VerticalAlignment="Top" Width="238">
-            <Controls:UserControl1 Height="801" Width="652"/>
-
-
-        </Viewbox>
-        <Slider HorizontalAlignment="Left" Height="28" Margin="552,703,0,0" VerticalAlignment="Top" Width="178" Background="Red"/>
-        <Slider HorizontalAlignment="Left" Height="162" Margin="483,494,0,0" VerticalAlignment="Top" Width="36" Background="Blue"/>
-
-        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Aerial" Margin="15,134,310.6,10.4">
-
-
-
-        </m:Map>
         <Viewbox>
-            <Image Source="{StaticResource airplaneicon}" Height="12" Width="263">
-
-            </Image>
+            <Frame x:Name="mainWin" NavigationUIVisibility="Hidden"/>
         </Viewbox>
-
     </Grid>
 </Window>

@@ -15,25 +15,21 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 
 
-namespace flightSimulator
+
+namespace flightSimulator.controls
 {
     /// <summary>
-    /// Interaction logic for SimulatorPage.xaml
+    /// Interaction logic for Map.xaml
     /// </summary>
-    public partial class SimulatorPage 
+    public partial class Map 
     {
-        public SimulatorPage()
+        public Map()
         {
             InitializeComponent();
-
+            
         }
 
 
-        public void setMapVM(ViewModel viewModel)
-        {
-            DataContext = viewModel;
-        }
-
-
+       
     }
 }

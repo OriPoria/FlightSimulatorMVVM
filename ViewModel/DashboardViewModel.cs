@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace flightSimulator
 {
-    public class DashboardViewModel : INotifyPropertyChanged
+    class DashboardViewModel : ViewModel
     {
-        private IFlightModel myModel;
-        public DashboardViewModel(IFlightModel m)
+        public DashboardViewModel(IFlightModel ifm)
         {
-            this.myModel = m;
+            this.myModel = ifm;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
                 NotifyPropertyChanged("VM_" + e.ToString());
@@ -60,15 +60,7 @@ namespace flightSimulator
             get { return myModel.getData("altimeter"); }
             set { }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
-        }
     }
 
 }
