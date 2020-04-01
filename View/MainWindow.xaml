@@ -15,15 +15,15 @@
         </Grid.ColumnDefinitions>
 
         <Viewbox  HorizontalAlignment="Left" Height="600" Margin="89.2,439,-22.4,-53.4" VerticalAlignment="Top" Width="238" Grid.Column="1"/>
-        <u:DashBoard x:Name="dash" Height="638" Width="687" HorizontalAlignment="Right" VerticalAlignment="Top" Loaded="dash_Loaded" Margin="0,474,24.6,-141.6" Grid.ColumnSpan="2"/>
+        <u:DashBoard x:Name="dash" Height="638" Width="687" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,474,24.6,-141.6" Grid.ColumnSpan="2"/>
 
         <Viewbox HorizontalAlignment="Left" Height="240" Margin="89.2,731,-22.4,0" VerticalAlignment="Top" Width="238" Grid.Column="1">
-            <Controls:UserControl1 Height="600" Width="652" RenderTransformOrigin="0.41,0.418" Loaded="UserControl1_Loaded"/>
+            <Controls:UserControl1 Height="600" Width="652" RenderTransformOrigin="0.41,0.418"/>
 
 
         </Viewbox>
         <Slider HorizontalAlignment="Left" Height="28" Margin="115.2,934,0,0" VerticalAlignment="Top" Width="178" Background="Red" Grid.Column="1"/>
-        <Slider HorizontalAlignment="Left" Height="162" Margin="89.2,757,0,0" VerticalAlignment="Top" Width="36" Background="Blue" Grid.Column="1" ValueChanged="Slider_ValueChanged"/>
+        <Slider HorizontalAlignment="Left" Height="162" Margin="89.2,757,0,0" VerticalAlignment="Top" Width="36" Background="Blue" Grid.Column="1"/>
 
         <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Aerial" Margin="10,408,95.8,51.4"/>
         <Viewbox Margin="82,584,63.8,311.4">
