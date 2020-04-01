@@ -38,6 +38,9 @@ namespace flightSimulator
 
         }
 
-   
+        private void Map_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

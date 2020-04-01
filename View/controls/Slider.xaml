@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:flightSimulator.controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="200" d:DesignWidth="200">
     <Grid>
-            
+        <Slider x:Name="Slider_throttle" Minimum="-1" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="89"  Background="Blue" Margin="45,139,0,27" />
+        <TextBox x:Name="Throttle_text_box" HorizontalAlignment="Left" Margin="236,299,0,10.4" TextWrapping="Wrap" Text ="{Binding ElementName=Slider_throttle, Path=Value, Mode=OneWay}"  FontSize="25" Width="38"  RenderTransformOrigin="-1.011,0.536"/>
     </Grid>
 </UserControl>
