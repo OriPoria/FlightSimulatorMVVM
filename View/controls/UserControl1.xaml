@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:flightSimulator.controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" Width="779.684">
+             d:DesignHeight="340" Width="340">
     <Grid>
         <Canvas  x:Name="Base" Margin="0" Width="340" Height="340">
             <Ellipse HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="340">

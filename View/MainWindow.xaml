@@ -17,22 +17,22 @@
 
 
 
-        <StackPanel Grid.Column="1" Margin="10">
-            <v:DashBoard x:Name="dash" VerticalAlignment="Center" Margin="0,0,0.4,0"/>
-            <v:Steering>
-                
-            </v:Steering>
+        <StackPanel Grid.Column="1">
+            <v:DashBoard x:Name="dash" VerticalAlignment="Center" Margin="0,0,10.2,0" Height="235"/>
+            <v:Steering Margin="56,-70,-1.8,-5" Height="426"/>
+
+
         </StackPanel>
 
 
 
         <Viewbox Grid.Column="0"  StretchDirection="Both" Stretch="UniformToFill">
-            
+
             <u:Map>
-                
+
             </u:Map>
         </Viewbox>
-        
+
 
 
     </Grid>
