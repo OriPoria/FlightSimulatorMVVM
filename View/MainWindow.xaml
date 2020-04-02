@@ -6,31 +6,34 @@
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:Controls ="clr-namespace:flightSimulator.controls"
         xmlns:u="clr-namespace:flightSimulator.View.controls"
+                xmlns:v="clr-namespace:flightSimulator.View.controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="800">
-    <Grid>
+        Title="MainWindow" Height="550" Width="800">
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="489*"/>
-            <ColumnDefinition Width="305*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Viewbox  HorizontalAlignment="Left" Height="600" Margin="89.2,439,-22.4,-53.4" VerticalAlignment="Top" Width="238" Grid.Column="1"/>
-        <u:DashBoard x:Name="dash" Height="638" Width="687" HorizontalAlignment="Right" VerticalAlignment="Top" Loaded="dash_Loaded" Margin="0,474,24.6,-141.6" Grid.ColumnSpan="2"/>
-
-        <Viewbox HorizontalAlignment="Left" Height="240" Margin="89.2,731,-22.4,0" VerticalAlignment="Top" Width="238" Grid.Column="1">
-            <Controls:UserControl1 Height="600" Width="652" RenderTransformOrigin="0.41,0.418" Loaded="UserControl1_Loaded"/>
 
 
+        <StackPanel Grid.Column="1">
+            <v:DashBoard x:Name="dash" VerticalAlignment="Center" Margin="0,0,10.2,0" Height="235"/>
+            <v:Steering Margin="56,-70,-1.8,-5" Height="426"/>
+
+
+        </StackPanel>
+
+
+
+        <Viewbox Grid.Column="0"  StretchDirection="Both" Stretch="UniformToFill">
+
+            <u:Map>
+
+            </u:Map>
         </Viewbox>
-        <Slider HorizontalAlignment="Left" Height="28" Margin="115.2,934,0,0" VerticalAlignment="Top" Width="178" Background="Red" Grid.Column="1"/>
-        <Slider HorizontalAlignment="Left" Height="162" Margin="89.2,757,0,0" VerticalAlignment="Top" Width="36" Background="Blue" Grid.Column="1" ValueChanged="Slider_ValueChanged"/>
 
-        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Aerial" Margin="10,408,95.8,51.4"/>
-        <Viewbox Margin="82,584,63.8,311.4">
-            <Image Source="{StaticResource airplaneicon}" Height="12" Width="263">
 
-            </Image>
-        </Viewbox>
 
     </Grid>
 </Window>

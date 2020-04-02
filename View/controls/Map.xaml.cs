@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace flightSimulator
+namespace flightSimulator.View.controls
 {
     /// <summary>
-    /// Interaction logic for SimulatorPage.xaml
+    /// Interaction logic for Map.xaml
     /// </summary>
-    public partial class SimulatorPage : Page
+    public partial class Map : UserControl
     {
-        public SimulatorPage()
+        public Map()
         {
             InitializeComponent();
         }

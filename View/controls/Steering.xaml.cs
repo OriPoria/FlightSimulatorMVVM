@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace flightSimulator
+namespace flightSimulator.View.controls
 {
     /// <summary>
-    /// Interaction logic for DashBoard3.xaml
+    /// Interaction logic for Steering.xaml
     /// </summary>
-    public partial class DashBoard3 : UserControl
+    public partial class Steering : UserControl
     {
-        public DashBoard3()
+        public Steering()
         {
             InitializeComponent();
         }
+
+       
     }
 }

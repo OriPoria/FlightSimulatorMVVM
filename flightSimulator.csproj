@@ -62,14 +62,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DashBoard3.xaml.cs">
-      <DependentUpon>DashBoard3.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\controls\DashBoard.xaml.cs">
       <DependentUpon>DashBoard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\controls\Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\controls\Slider.xaml.cs">
       <DependentUpon>Slider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\controls\Steering.xaml.cs">
+      <DependentUpon>Steering.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\firstPageOfApp.xaml.cs">
       <DependentUpon>firstPageOfApp.xaml</DependentUpon>
@@ -85,23 +88,21 @@
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\SteeringViewModel .cs" />
-    <Compile Include="View\shmuPageTest.xaml.cs">
-      <DependentUpon>shmuPageTest.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SimulatorPage.xaml.cs">
-      <DependentUpon>SimulatorPage.xaml</DependentUpon>
-    </Compile>
-    <Page Include="DashBoard3.xaml">
+    <Page Include="View\controls\DashBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\controls\DashBoard.xaml">
+    <Page Include="View\controls\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\controls\Slider.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\controls\Steering.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\controls\UserControl1.xaml">
       <SubType>Designer</SubType>
@@ -126,14 +127,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\shmuPageTest.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SimulatorPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
