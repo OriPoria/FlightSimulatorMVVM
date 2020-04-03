@@ -4,7 +4,7 @@
              Startup="App_Startup">
     <Application.Resources>
         <ResourceDictionary>
-            <BitmapImage x:Key="airplaneicon" UriSource="C:\Users\oripo\source\repos\flightSimulator\View\images\airplaneicon.png">
+            <BitmapImage x:Key="airplaneicon" UriSource="C:\Users\שמואל\source\repos\FlightSimulatorMVVM\airplane.png">
 
             </BitmapImage>
         </ResourceDictionary>
