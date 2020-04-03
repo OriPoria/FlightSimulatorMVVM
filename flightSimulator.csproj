@@ -62,6 +62,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\FirstPage.xaml.cs">
+      <DependentUpon>FirstPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\controls\DashBoard.xaml.cs">
       <DependentUpon>DashBoard.xaml</DependentUpon>
     </Compile>
@@ -74,20 +78,18 @@
     <Compile Include="View\controls\Steering.xaml.cs">
       <DependentUpon>Steering.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\firstPageOfApp.xaml.cs">
-      <DependentUpon>firstPageOfApp.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="INotifyPropertyChanged.cs" />
     <Compile Include="Model\IFlightModel.cs" />
     <Compile Include="Model\ITelnetClient.cs" />
     <Compile Include="Model\MyFlight.cs" />
     <Compile Include="Model\MyTelnetClient.cs" />
     <Compile Include="Model\SimulatorObject.cs" />
-    <Compile Include="PropertyChangedEventArgs.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\SteeringViewModel .cs" />
+    <Page Include="View\FirstPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\controls\DashBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,10 +109,6 @@
     <Page Include="View\controls\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\firstPageOfApp.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

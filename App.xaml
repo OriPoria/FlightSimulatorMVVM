@@ -1,12 +1,11 @@
 ﻿<Application x:Class="flightSimulator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:flightSimulator"
-             StartupUri="View\firstPageOfApp.xaml">
+             Startup="App_Startup">
     <Application.Resources>
         <ResourceDictionary>
-            <BitmapImage x:Key="airplaneicon" UriSource="C:\Users\שמואל\source\repos\FlightSimulatorMVVM\airplane.png">
-                
+            <BitmapImage x:Key="airplaneicon" UriSource="C:\Users\oripo\source\repos\flightSimulator\View\images\airplaneicon.png">
+
             </BitmapImage>
         </ResourceDictionary>
     </Application.Resources>

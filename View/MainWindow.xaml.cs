@@ -22,22 +22,29 @@ namespace flightSimulator
     /// </summary>
     public partial class MainWindow : Window
     {
-
         IFlightModel myFilght;
 
-        public MainWindow(string ip, int port)
+        public MainWindow()
         {
             InitializeComponent();
-            ITelnetClient telnetClient = new MyTelnetClient();
-            IFlightModel flightModel = new MyFlight(telnetClient);
-   
-            flightModel.connect(ip, port);
-            myFilght = flightModel;
+
             
 
 
         }
+        public void setVMmap(ViewModel vm)
+        {
+            myMapView.DataContext = vm;
+        }
+        public void setVMdash(ViewModel vm)
+        {
+            dash.DataContext = vm;
+        }
 
-    
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            myFilght.disconnect();
+            App.Current.Shutdown();
+        }
     }
 }

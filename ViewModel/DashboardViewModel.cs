@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+
 
 namespace flightSimulator
 {
-    public class DashboardViewModel : INotifyPropertyChanged
+    public class DashboardViewModel : ViewModel
     {
         private IFlightModel myModel;
         public DashboardViewModel(IFlightModel m)
@@ -14,15 +16,15 @@ namespace flightSimulator
             this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                NotifyPropertyChanged("VM_" + e.ToString());
+                NotifyPropertyChanged("VM_" + e.PropertyName);
             };
 
         }
 
 
-        public double VM_heaading
+        public double VM_heading
         {
-            get { return myModel.getData("heaading"); }
+            get { return myModel.getData("heading"); }
             set { }
         }
         public double VM_verticalSpeed
@@ -60,15 +62,7 @@ namespace flightSimulator
             get { return myModel.getData("altimeter"); }
             set { }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
-        }
     }
 
 }

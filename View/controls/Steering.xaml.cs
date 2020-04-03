@@ -25,6 +25,5 @@ namespace flightSimulator.View.controls
             InitializeComponent();
         }
 
-       
     }
 }

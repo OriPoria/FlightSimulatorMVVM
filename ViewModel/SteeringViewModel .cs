@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+
 
 namespace flightSimulator
 {
-    class SteeringViewModel : INotifyPropertyChanged
+    class SteeringViewModel : ViewModel
     {
         private IFlightModel myModel;
 
@@ -17,6 +19,10 @@ namespace flightSimulator
         public SteeringViewModel(IFlightModel m)
         {
             this.myModel = m;
+            myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
+            {
+                NotifyPropertyChanged("VM_" + e.PropertyName);
+            };
 
         }
 
@@ -70,10 +76,6 @@ namespace flightSimulator
             }
         }
 
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
     }
 }

@@ -3,19 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:flightSimulator.View.controls"
-                     xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
-        xmlns:Controls ="clr-namespace:flightSimulator.controls"
-        xmlns:u="clr-namespace:flightSimulator.View.controls"
-                xmlns:v="clr-namespace:flightSimulator.View.controls"
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="450">
-    <Grid>
-        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Aerial" Margin="0,0,-0.4,-0.4" Height="450" Width="450"/>
+             d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="CutomPushpinTemplate" TargetType="m:Pushpin">
+            <Image Source="{StaticResource airplaneicon}">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="0"/>
+                </Image.RenderTransform>
+            </Image>
 
-        <Viewbox Width="50" Height="50" Margin="244,166,155.6,233.6">
-            <Image Source="{StaticResource airplaneicon}"  Margin="258,151,161.6,231.6"/>
-        </Viewbox>
-      
+        </ControlTemplate>
+
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="12*"/>
+            
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions >
+            
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="220"/>
+        </Grid.ColumnDefinitions>
+        
+
+        <TextBlock Text="Latitude:" FontSize="20" Grid.Column="0"/>
+
+        <TextBlock x:Name="curLatitude" Text="{Binding Path = VM_latitude, UpdateSourceTrigger = PropertyChanged, Mode = OneWay}" FontSize="20" Grid.Column="1"/>
+
+        <TextBlock Text="Longitude:" FontSize="20" Grid.Column="2"/>
+
+        <TextBlock x:Name="curLongitude" Text="{Binding Path=VM_latitude, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" FontSize="20" Grid.Column="3"/>
+
+        
+        
+        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Road" Grid.Row="1" Grid.ColumnSpan="4" >
+            <m:Pushpin x:Name="pin" Location="{Binding Path=VM_location, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+               
+                
+
+            </m:Pushpin>
+
+
+            </m:Map>
+
+
+     
+
+
+
     </Grid>
+
 </UserControl>
