@@ -11,27 +11,61 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Threading;
 
-namespace flightSimulator.View
+
+namespace flightSimulator
 {
     /// <summary>
     /// Interaction logic for FirstPage.xaml
     /// </summary>
-    public partial class FirstPage : Page
+    public partial class FirstPage : Window
     {
-        private MainWindow mainWindow;
-        public FirstPage(MainWindow mw)
+        private MainWindow myMain;
+        private IFlightModel myFlight;
+        public FirstPage()
         {
-            this.mainWindow = mw;
             InitializeComponent();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void setFlight(IFlightModel ifm)
         {
-            mainWindow.mainWin.Content = new SimulatorPage();
+            this.myFlight = ifm;
+        }
+        public void setMain(MainWindow mw)
+        {
+            this.myMain = mw;
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
+            int port = Int32.Parse(this.port_text_box.Text);
+
+
+            myFlight.connect(this.ip_textbox.Text, port);
+
+            Thread t = new Thread(new ThreadStart(myFlight.start));
+            t.Start();
+
+            this.Close();
+            myMain.Show();
+            
+        }
+
+
+
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
+
+            myFlight.connect("127.0.0.1", 5402);
+
+            Thread t = new Thread(new ThreadStart(myFlight.start));
+            t.Start();
+
+            this.Close();
+            myMain.Show();
+            
 
         }
     }

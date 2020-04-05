@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Maps.MapControl.WPF">
       <HintPath>..\..\..\..\..\Program Files (x86)\Bing Maps WPF Control\V1\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
     </Reference>
@@ -61,32 +62,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\FirstPage.xaml.cs">
+      <DependentUpon>FirstPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ViewModel.cs" />
     <Compile Include="View\controls\DashBoard.xaml.cs">
       <DependentUpon>DashBoard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\controls\Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\controls\Slider.xaml.cs">
       <DependentUpon>Slider.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FirstPage.xaml.cs">
-      <DependentUpon>FirstPage.xaml</DependentUpon>
+    <Compile Include="View\controls\Steering.xaml.cs">
+      <DependentUpon>Steering.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\IFlightModel.cs" />
     <Compile Include="Model\ITelnetClient.cs" />
     <Compile Include="Model\MyFlight.cs" />
     <Compile Include="Model\MyTelnetClient.cs" />
     <Compile Include="Model\SimulatorObject.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="ViewModel\DashboardViewModel.cs" />
     <Compile Include="ViewModel\MapViewModel.cs" />
     <Compile Include="ViewModel\SteeringViewModel .cs" />
-    <Compile Include="View\controls\Map.xaml.cs">
-      <DependentUpon>Map.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SimulatorPage.xaml.cs">
-      <DependentUpon>SimulatorPage.xaml</DependentUpon>
-    </Compile>
+    <Page Include="View\FirstPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\controls\DashBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\controls\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,11 +102,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\controls\UserControl1.xaml">
+    <Page Include="View\controls\Steering.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FirstPage.xaml">
+    <Page Include="View\controls\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,14 +125,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\controls\Map.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SimulatorPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

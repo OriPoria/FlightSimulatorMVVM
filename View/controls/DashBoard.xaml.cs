@@ -12,17 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.ComponentModel;
 
-
-namespace flightSimulator.controls
+namespace flightSimulator.View.controls
 {
     /// <summary>
     /// Interaction logic for DashBoard.xaml
     /// </summary>
     public partial class DashBoard : UserControl
     {
-        ViewModel dashBoardVM;
         public DashBoard()
         {
             InitializeComponent();

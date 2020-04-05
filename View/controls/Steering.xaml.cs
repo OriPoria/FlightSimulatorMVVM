@@ -12,28 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.ComponentModel;
 
-
-namespace flightSimulator
+namespace flightSimulator.View.controls
 {
     /// <summary>
-    /// Interaction logic for SimulatorPage.xaml
+    /// Interaction logic for Steering.xaml
     /// </summary>
-    public partial class SimulatorPage 
+    public partial class Steering : UserControl
     {
-        public SimulatorPage()
+        public Steering()
         {
             InitializeComponent();
-
         }
-
-
-        public void setMapVM(ViewModel viewModel)
-        {
-            DataContext = viewModel;
-        }
-
 
     }
 }

@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
+
 namespace flightSimulator
-{
+{   
     abstract public class ViewModel : INotifyPropertyChanged
-    {
-        protected IFlightModel myModel;
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
         {
-            if (this.PropertyChanged != null)
+            protected IFlightModel myModel;
+            public event PropertyChangedEventHandler PropertyChanged;
+            public void NotifyPropertyChanged(string propName)
             {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+                if (this.PropertyChanged != null)
+                {
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+                }
+
             }
-
         }
-
-    }
 }

@@ -5,26 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
+
 namespace flightSimulator
 {
     class SteeringViewModel : ViewModel
     {
+        private IFlightModel myModel;
 
         private double throttle;
         private double rudder;
         private double elevator;
         private double aileron;
-        public SteeringViewModel(IFlightModel ifm)
+        public SteeringViewModel(IFlightModel m)
         {
-            this.myModel = ifm;
-            
+            this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                NotifyPropertyChanged("VM_" + e.ToString());
+                NotifyPropertyChanged("VM_" + e.PropertyName);
             };
-            
 
         }
+
         public double VM_Throttle
         {
             get
@@ -74,9 +75,6 @@ namespace flightSimulator
 
             }
         }
-
- 
-
 
 
     }

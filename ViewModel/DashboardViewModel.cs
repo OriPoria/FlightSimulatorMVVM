@@ -5,24 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
+
 namespace flightSimulator
 {
-    class DashboardViewModel : ViewModel
+    public class DashboardViewModel : ViewModel
     {
-        public DashboardViewModel(IFlightModel ifm)
+        private IFlightModel myModel;
+        public DashboardViewModel(IFlightModel m)
         {
-            this.myModel = ifm;
+            this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                NotifyPropertyChanged("VM_" + e.ToString());
+                NotifyPropertyChanged("VM_" + e.PropertyName);
             };
 
         }
 
 
-        public double VM_heaading
+        public double VM_heading
         {
-            get { return myModel.getData("heaading"); }
+            get { return myModel.getData("heading"); }
             set { }
         }
         public double VM_verticalSpeed

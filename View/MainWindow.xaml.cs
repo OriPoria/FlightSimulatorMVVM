@@ -22,14 +22,29 @@ namespace flightSimulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        IFlightModel myFilght;
 
         public MainWindow()
         {
             InitializeComponent();
+
             
-                       
+
 
         }
+        public void setVMmap(ViewModel vm)
+        {
+            myMapView.DataContext = vm;
+        }
+        public void setVMdash(ViewModel vm)
+        {
+            dash.DataContext = vm;
+        }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            myFilght.disconnect();
+            App.Current.Shutdown();
+        }
     }
 }

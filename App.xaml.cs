@@ -14,7 +14,7 @@ namespace flightSimulator
     /// </summary>
     public partial class App : Application
     {
-        void App_Startup(object sender, StartupEventArgs e)
+        public void App_Startup(object sender, StartupEventArgs e)
         {
             ITelnetClient telnetClient = new MyTelnetClient();
             IFlightModel flightModel = new MyFlight(telnetClient);
@@ -23,17 +23,20 @@ namespace flightSimulator
             ViewModel steeringVM = new SteeringViewModel(flightModel);
             ViewModel dashBoardVM = new DashboardViewModel(flightModel);
 
-            SimulatorPage simPage = new SimulatorPage();
-            simPage.setMapVM(mapVM);
 
 
 
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Content = simPage;
-            mainWindow.Show();
-            flightModel.connect("127.0.0.1", 5402);
-            Thread t = new Thread(new ThreadStart(flightModel.start));
-            t.Start();
+            mainWindow.setVMmap(mapVM);
+            mainWindow.setVMdash(dashBoardVM);
+
+            
+            FirstPage first = new FirstPage();
+            first.setFlight(flightModel);
+            first.setMain(mainWindow);
+
+            first.ShowDialog();
+
         }
     }
 }
