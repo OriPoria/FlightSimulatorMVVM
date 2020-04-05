@@ -28,8 +28,6 @@ namespace flightSimulator
         {
             InitializeComponent();
 
-            
-
 
         }
         public void setVMmap(ViewModel vm)
@@ -39,6 +37,10 @@ namespace flightSimulator
         public void setVMdash(ViewModel vm)
         {
             dash.DataContext = vm;
+        }
+        public void setVMsteering(ViewModel vm)
+        {
+            steering.DataContext = vm;
         }
 
         private void Window_Closed(object sender, EventArgs e)

@@ -28,7 +28,7 @@
         </Viewbox>
 
             
-                <v:Steering Grid.Column="1" Grid.Row="1"/>
+                <v:Steering x:Name="steering" Grid.Column="1" Grid.Row="1"/>
             
 
 
