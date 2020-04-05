@@ -30,10 +30,14 @@ namespace flightSimulator
 
         public void write(string command)
         {
-            sw.WriteLine(command);
-            sw.Flush();
-            readdata = sr.ReadLine();
-
+            try
+            {
+                sw.WriteLine(command);
+                sw.Flush();
+                readdata = sr.ReadLine();
+            }
+            catch (IOException e) { }
+            catch (ObjectDisposedException e) { }
 
         }
         public string read()

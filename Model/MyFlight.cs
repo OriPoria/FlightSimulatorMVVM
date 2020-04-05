@@ -26,7 +26,8 @@ namespace flightSimulator
         public event PropertyChangedEventHandler PropertyChanged;
         public MyFlight(ITelnetClient tc)
         {
-            this.myTelnetClient = tc;   
+            this.myTelnetClient = tc;
+            stop = false;
             initializeObjects();
         }
         public void connect(string ip, int port)
@@ -36,8 +37,8 @@ namespace flightSimulator
 
         public void disconnect()
         {
+            stop = true;
             myTelnetClient.disconnect();
-            stop = false;
         }
         public void start()
         {
