@@ -27,11 +27,11 @@ namespace flightSimulator
         {
             InitializeComponent();
         }
-        public void setFlight(IFlightModel ifm)
+        public void SetFlight(IFlightModel ifm)
         {
             this.myFlight = ifm;
         }
-        public void setMain(MainWindow mw)
+        public void SetMain(MainWindow mw)
         {
             this.myMain = mw;
         }
@@ -43,9 +43,9 @@ namespace flightSimulator
             int port = Int32.Parse(this.port_text_box.Text);
 
 
-            myFlight.connect(this.ip_textbox.Text, port);
+            myFlight.Connect(this.ip_textbox.Text, port);
 
-            Thread t = new Thread(new ThreadStart(myFlight.start));
+            Thread t = new Thread(new ThreadStart(myFlight.Start));
             t.Start();
 
             this.Close();
@@ -58,9 +58,9 @@ namespace flightSimulator
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
 
-            myFlight.connect("127.0.0.1", 5402);
+            myFlight.Connect("127.0.0.1", 5402);
 
-            Thread t = new Thread(new ThreadStart(myFlight.start));
+            Thread t = new Thread(new ThreadStart(myFlight.Start));
             t.Start();
 
             this.Close();

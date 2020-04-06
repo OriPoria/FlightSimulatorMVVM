@@ -10,13 +10,12 @@ namespace flightSimulator
 {
     class MapViewModel : ViewModel
     {
-        private IFlightModel myModel;
         private Location loc;
 
         
-        public MapViewModel(IFlightModel m)
+        public MapViewModel(IFlightModel ifm) : base(ifm)
         {
-            this.myModel = m;
+            this.myModel = ifm;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
                 NotifyPropertyChanged("VM_" + e.PropertyName);
@@ -30,8 +29,7 @@ namespace flightSimulator
         {
             get
             {
-                double val = Convert.ToDouble(String.Format("{0:0.000}",myModel.getData("latitude")));
-                return val;
+                return myModel.GetData("latitude");
             }
 
         }
@@ -39,8 +37,7 @@ namespace flightSimulator
         {
             get
             {
-                double val = Convert.ToDouble(String.Format("{0:0.000}", myModel.getData("latitude")));
-                return myModel.getData("longitude");
+                return myModel.GetData("longitude");
             }
 
 
@@ -50,8 +47,8 @@ namespace flightSimulator
             get
             {
                 this.loc = new Location();
-                loc.Latitude = myModel.getData("latitude");
-                loc.Longitude = myModel.getData("longitude");
+                loc.Latitude = myModel.GetData("latitude");
+                loc.Longitude = myModel.GetData("longitude");
                 return loc;
             }
 

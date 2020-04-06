@@ -10,13 +10,12 @@ namespace flightSimulator
 {
     class SteeringViewModel : ViewModel
     {
-        private IFlightModel myModel;
 
         private double throttle;
         private double rudder;
         private double elevator;
         private double aileron;
-        public SteeringViewModel(IFlightModel m)
+        public SteeringViewModel(IFlightModel m) : base(m)
         {
             this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)

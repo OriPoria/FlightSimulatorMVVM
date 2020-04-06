@@ -9,35 +9,27 @@
                 xmlns:v="clr-namespace:flightSimulator.View.controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Closed="Window_Closed">
-<Viewbox>
-    <Grid>
-        <Grid.RowDefinitions>
+    <Viewbox>
+        <Grid>
+            <Grid.RowDefinitions>
                 <RowDefinition Height="400"/>
                 <RowDefinition Height="200"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600"/>
-            <ColumnDefinition Width="200"/>
-        </Grid.ColumnDefinitions>
-
- 
-
-    <Viewbox Grid.Row="0" Grid.Column="1">
-       
-        <v:DashBoard x:Name="dash" Grid.Column="1" Grid.Row="0"/>
-        </Viewbox>
-
-            
-                <v:Steering Grid.Column="1" Grid.Row="1"/>
-            
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
 
 
 
+            <v:DashBoard x:Name="dash" Grid.Column="1" Grid.Row="0"/>
+
+            <v:Steering Grid.Column="1" Grid.Row="1"/>
 
             <u:Map x:Name="myMapView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
 
 
-    </Grid>
+        </Grid>
     </Viewbox>
 
 </Window>

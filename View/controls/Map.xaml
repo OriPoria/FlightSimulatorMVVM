@@ -37,11 +37,11 @@
 
         <TextBlock Text="Latitude:" FontSize="20" Grid.Column="0"/>
 
-        <TextBlock x:Name="curLatitude" Text="{Binding Path = VM_latitude, UpdateSourceTrigger = PropertyChanged, Mode = OneWay}" FontSize="20" Grid.Column="1"/>
+        <TextBlock x:Name="curLatitude" Text="{Binding Path = VM_latitude, UpdateSourceTrigger = PropertyChanged, Mode = OneWay, StringFormat={}{0:0.000}}" FontSize="20" Grid.Column="1"/>
 
         <TextBlock Text="Longitude:" FontSize="20" Grid.Column="2"/>
 
-        <TextBlock x:Name="curLongitude" Text="{Binding Path=VM_latitude, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" FontSize="20" Grid.Column="3"/>
+        <TextBlock x:Name="curLongitude" Text="{Binding Path=VM_longitude, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, StringFormat={}{0:0.000}}" FontSize="20" Grid.Column="3"/>
 
         
         

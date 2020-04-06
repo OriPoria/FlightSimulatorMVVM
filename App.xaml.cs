@@ -14,26 +14,23 @@ namespace flightSimulator
     /// </summary>
     public partial class App : Application
     {
+        public ViewModel MainViewModel { get; internal set; }
         public void App_Startup(object sender, StartupEventArgs e)
         {
             ITelnetClient telnetClient = new MyTelnetClient();
             IFlightModel flightModel = new MyFlight(telnetClient);
 
-            ViewModel mapVM = new MapViewModel(flightModel);
-            ViewModel steeringVM = new SteeringViewModel(flightModel);
-            ViewModel dashBoardVM = new DashboardViewModel(flightModel);
+            MainViewModel = new ViewModel(flightModel);
+            MainViewModel.InitializeVM();
 
 
+            MainWindow mainWindow = new MainWindow(flightModel);
 
-
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.setVMmap(mapVM);
-            mainWindow.setVMdash(dashBoardVM);
 
             
             FirstPage first = new FirstPage();
-            first.setFlight(flightModel);
-            first.setMain(mainWindow);
+            first.SetFlight(flightModel);
+            first.SetMain(mainWindow);
 
             first.ShowDialog();
 

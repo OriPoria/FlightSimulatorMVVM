@@ -24,26 +24,18 @@ namespace flightSimulator
     {
         IFlightModel myFilght;
 
-        public MainWindow()
+        public MainWindow(IFlightModel ifm)
         {
             InitializeComponent();
-
+            this.myFilght = ifm;
             
 
 
         }
-        public void setVMmap(ViewModel vm)
-        {
-            myMapView.DataContext = vm;
-        }
-        public void setVMdash(ViewModel vm)
-        {
-            dash.DataContext = vm;
-        }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            myFilght.disconnect();
+            myFilght.Disconnect();
             App.Current.Shutdown();
         }
     }

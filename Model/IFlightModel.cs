@@ -10,11 +10,11 @@ namespace flightSimulator
 {
     public interface IFlightModel : INotifyPropertyChanged
     {
-        void connect(string ip, int port);
-        void disconnect();
-        void start();
-        double getData(string proName);
-        void addCommand(string command);
+        void Connect(string ip, int port);
+        void Disconnect();
+        void Start();
+        double GetData(string proName);
+        void AddCommand(string command);
 
         double Throttle { set; get; }
         double Rudder { set; get; }

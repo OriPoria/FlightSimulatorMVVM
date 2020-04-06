@@ -21,10 +21,14 @@ namespace flightSimulator.View.controls
     /// </summary>
     public partial class Map : UserControl
     {
-
+        private ViewModel mapVM;
         public Map()
         {
             InitializeComponent();
+            DataContext = (Application.Current as App).MainViewModel.MapVM;
+
+
+
             ControlTemplate template = (ControlTemplate)this.FindResource("CutomPushpinTemplate");
             pin.Template = template;
 

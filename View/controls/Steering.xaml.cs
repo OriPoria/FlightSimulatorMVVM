@@ -23,6 +23,8 @@ namespace flightSimulator.View.controls
         public Steering()
         {
             InitializeComponent();
+            DataContext = (Application.Current as App).MainViewModel.SteeringVM;
+
         }
 
     }

@@ -18,7 +18,7 @@ namespace flightSimulator
         
         string readdata = null;// the returned string
 
-        public void connect(string ip, int port)
+        public void Connect(string ip, int port)
         {
             clientSocket = new TcpClient();
             clientSocket.Connect(ip, port);
@@ -28,7 +28,7 @@ namespace flightSimulator
 
         }
 
-        public void write(string command)
+        public void Write(string command)
         {
             try
             {
@@ -40,12 +40,12 @@ namespace flightSimulator
             catch (ObjectDisposedException e) { }
 
         }
-        public string read()
+        public string Read()
         {
                 return readdata;
 
         }
-        public void disconnect()
+        public void Disconnect()
         {
             clientSocket.Close();
         }

@@ -30,17 +30,17 @@ namespace flightSimulator
             stop = false;
             initializeObjects();
         }
-        public void connect(string ip, int port)
+        public void Connect(string ip, int port)
         {
-            myTelnetClient.connect(ip, port);
+            myTelnetClient.Connect(ip, port);
         }
 
-        public void disconnect()
+        public void Disconnect()
         {
             stop = true;
-            myTelnetClient.disconnect();
+            myTelnetClient.Disconnect();
         }
-        public void start()
+        public void Start()
         {
                 while (!stop)
                 {
@@ -49,8 +49,8 @@ namespace flightSimulator
                     for (i = 0; i < readFlightObjects.Length; i++)
                     {
                         builder.Append("get ").Append(readFlightObjects[i].Sim);
-                        myTelnetClient.write(builder.ToString());
-                        string s = myTelnetClient.read();
+                        myTelnetClient.Write(builder.ToString());
+                        string s = myTelnetClient.Read();
                         readFlightObjects[i].Value = Double.Parse(s);
                         NotifyPropertyChanged(readFlightObjects[i].Name);
                         builder.Clear();
@@ -60,7 +60,7 @@ namespace flightSimulator
                     //send all the commands from the queue to the simulator and remove the item from the queue
                     while (queueCommands.Count > 0)
                     {
-                    myTelnetClient.write(queueCommands.Dequeue());
+                    myTelnetClient.Write(queueCommands.Dequeue());
                     }
 
 
@@ -73,7 +73,7 @@ namespace flightSimulator
         public double Throttle
         {
             get{ return throttle; }
-            set{ addCommand("set /controls/engines/current-engine/throttle " + value);
+            set{ AddCommand("set /controls/engines/current-engine/throttle " + value);
                 this.throttle = value;
                 NotifyPropertyChanged("throttle");
             }
@@ -82,7 +82,7 @@ namespace flightSimulator
         {
             get { return rudder; }
             set {
-                addCommand("set /controls/flight/rudder " + value);
+                AddCommand("set /controls/flight/rudder " + value);
                 this.rudder = value;
                 NotifyPropertyChanged("rudder");
 
@@ -94,7 +94,7 @@ namespace flightSimulator
             { return elevator;
             }
             set
-            {   addCommand("set /controls/flight/elevator " + value);
+            {   AddCommand("set /controls/flight/elevator " + value);
                 this.elevator = value;
                 NotifyPropertyChanged("elevator");
 
@@ -108,7 +108,7 @@ namespace flightSimulator
             }
             set
             {
-                addCommand("set /controls/flight/aileron " + value);
+                AddCommand("set /controls/flight/aileron " + value);
                 this.aileron = value;
                 NotifyPropertyChanged("aileron");
 
@@ -122,11 +122,11 @@ namespace flightSimulator
                 this.PropertyChanged(this, new PropertyChangedEventArgs(proName));
             }
         }
-        public double getData(string str)
+        public double GetData(string str)
         {
             return readFlightObjects[hash[str]].Value;
         }
-        public void addCommand(string command)
+        public void AddCommand(string command)
         {
             queueCommands.Enqueue(command);
         }
