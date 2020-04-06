@@ -29,6 +29,7 @@ namespace flightSimulator
             MainWindow mainWindow = new MainWindow();
             mainWindow.setVMmap(mapVM);
             mainWindow.setVMdash(dashBoardVM);
+            mainWindow.setVMsteering(steeringVM);
 
             
             FirstPage first = new FirstPage();

@@ -39,8 +39,8 @@ namespace flightSimulator
         {
             get
             {
-                double val = Convert.ToDouble(String.Format("{0:0.000}", myModel.getData("latitude")));
-                return myModel.getData("longitude");
+                double val = Convert.ToDouble(String.Format("{0:0.000}", myModel.getData("longitude")));
+                return val;
             }
 
 

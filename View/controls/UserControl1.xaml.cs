@@ -24,7 +24,7 @@ namespace flightSimulator.controls
         {
             InitializeComponent();
         }
-        private void centerKnob_Completed(object sender,EventArgs e) { }
+        private void centerKnob_Completed(object sender, EventArgs e) { }
         private Point firstPoint = new Point();
 
 
@@ -32,18 +32,55 @@ namespace flightSimulator.controls
         {
             if (e.ChangedButton == MouseButton.Left) { firstPoint = e.GetPosition(this); }
         }
+
+
+
+
+        public double ElevatorValue
+        {
+            get { return (double)GetValue(ElevatorValueProperty); }
+            set
+            {
+                SetValue(ElevatorValueProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty ElevatorValueProperty = DependencyProperty.Register("ElevatorValue", typeof(double), typeof(UserControl1));
+
+
+        public double RudderValue
+        {
+            get { return (double)GetValue(RudderValueProperty); }
+            set
+            {
+                SetValue(RudderValueProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty RudderValueProperty = DependencyProperty.Register("RudderValue", typeof(double), typeof(UserControl1));
+
+
+
+
+
+
         private void Knob_MouseMove(object sender, MouseEventArgs e)
         {
 
-            if(e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 double x = e.GetPosition(this).X - firstPoint.X;
                 double y = e.GetPosition(this).Y - firstPoint.Y;
-                if(Math.Sqrt(x*x + y*y) < Base.Width / 2)
+                double d = Math.Sqrt(x * x + y * y);
+                if (d < Math.Abs(Base.Width / Knob.Width) / 2)
                 {
                     knobPosition.X = x;
                     knobPosition.Y = y;
                 }
+
+                RudderValue = x / (Math.Abs(Base.Width - KnobBase.Width) * 2);
+                ElevatorValue = y / (Math.Abs(Base.Width - KnobBase.Width) * 2);
+
             }
 
         }
@@ -53,5 +90,11 @@ namespace flightSimulator.controls
             knobPosition.X = 0;
             knobPosition.Y = 0;
         }
+
+
+
+
+
+
     }
 }
