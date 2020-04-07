@@ -72,7 +72,8 @@ namespace flightSimulator.controls
                 double x = e.GetPosition(this).X - firstPoint.X;
                 double y = e.GetPosition(this).Y - firstPoint.Y;
                 double d = Math.Sqrt(x * x + y * y);
-                if (d < Math.Abs(Base.Width / Knob.Width) / 2)
+              //  if (d < Math.Abs(Base.Width / Knob.Width) / 2)
+              if(d < Base.Width / 2)
                 {
                     knobPosition.X = x;
                     knobPosition.Y = y;
