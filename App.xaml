@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Startup="App_Startup">
     <Application.Resources>
+
         <ResourceDictionary>
             <BitmapImage x:Key="airplaneicon" UriSource="View\images\airplaneicon.png">
 
