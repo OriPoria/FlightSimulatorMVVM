@@ -72,9 +72,6 @@
     <Compile Include="View\controls\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\controls\Slider.xaml.cs">
-      <DependentUpon>Slider.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\controls\Steering.xaml.cs">
       <DependentUpon>Steering.xaml</DependentUpon>
     </Compile>
@@ -97,10 +94,6 @@
     <Page Include="View\controls\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\controls\Slider.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\controls\Steering.xaml">
       <SubType>Designer</SubType>

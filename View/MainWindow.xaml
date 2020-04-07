@@ -10,26 +10,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Closed="Window_Closed">
     <Viewbox>
+        <Border>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="400"/>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="300"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="600"/>
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="290"/>
             </Grid.ColumnDefinitions>
 
 
 
-            <v:DashBoard x:Name="dash" Grid.Column="1" Grid.Row="0"/>
+            <v:DashBoard x:Name="dash" Grid.Column="2" Grid.Row="0"/>
 
-            <v:Steering Grid.Column="1" Grid.Row="1"/>
+            <v:Steering Grid.Column="2" Grid.Row="1"/>
 
             <u:Map x:Name="myMapView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
 
 
         </Grid>
+        </Border>
     </Viewbox>
 
 </Window>

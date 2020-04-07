@@ -20,19 +20,7 @@
     </UserControl.Resources>
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="12*"/>
-            
 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions >
-            
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="220"/>
-        </Grid.ColumnDefinitions>
         
 
         <TextBlock Text="Latitude:" FontSize="20" Grid.Column="0"/>

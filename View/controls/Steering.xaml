@@ -1,5 +1,5 @@
 ﻿<UserControl x:Class="flightSimulator.View.controls.Steering"
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -17,16 +17,16 @@
             </Grid.RowDefinitions>
 
 
-            <Slider x:Name="Slider_throttle" Minimum="-1" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="274"    Margin="261,325,0,-168.4" Grid.Row="1" />
-            <TextBox x:Name="Throttle_text_box" HorizontalAlignment="Left" Margin="417,383,0,-147.8" TextWrapping="Wrap" Text ="{Binding ElementName=Slider_throttle,Path=Value,Mode=OneWay}"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
-            <Label Name="lable_throttle"  Content="Throttle" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="282,376,0,-77.8" VerticalAlignment="Top" Width="114" Grid.Row="1"/>
+            <Slider x:Name="Slider_throttle" Minimum="-1" Value="{Binding Path=VM_Throttle, Mode=TwoWay}" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="447" Margin="181,340,0,-245.8" Grid.Row="1" />
+            <TextBox x:Name="Throttle_text_box" HorizontalAlignment="Left" Margin="403,416,0,-144.8" TextWrapping="Wrap" Text="{Binding VM_Throttle,  StringFormat={}{0:0.000}}"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
+            <Label Name="lable_throttle"  Content="Throttle" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="269,426,0,-127.8" VerticalAlignment="Top" Width="114" Grid.Row="1" RenderTransformOrigin="0.255,1.753"/>
 
             <Viewbox Margin="0,-51,-55,150" Grid.RowSpan="2" >
 
-                <Controls:UserControl1 Height="170" Width="778" RenderTransformOrigin="0.41,0.418"/>
+                <Controls:UserControl1 ElevatorValue="{Binding VM_Elevator, Mode=OneWayToSource}" RudderValue="{Binding VM_Rudder, Mode=OneWayToSource}" Height="170" Width="778" RenderTransformOrigin="0.41,0.418"/>
 
             </Viewbox>
-            <Slider x:Name="Aileron_rudder" Minimum="-1" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="276"  Margin="38,143,0,173" RenderTransformOrigin="0.5,0.5" Grid.Row="1" >
+            <Slider x:Name="Aileron_slider" Minimum="-1" Maximum="1" Value="{Binding Path=VM_Aileron, Mode=TwoWay}" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="406"  Margin="-16,101,0,137.2" RenderTransformOrigin="0.5,0.5" Grid.Row="1" >
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -36,7 +36,7 @@
                     </TransformGroup>
                 </Slider.RenderTransform>
             </Slider>
-            <Label x:Name="lable_Aileron"  Content="Aileron" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="65,147,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Label x:Name="lable_Aileron"  Content="Aileron" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="9,147,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -46,7 +46,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <TextBox x:Name="Aileron_rudder_text_box" HorizontalAlignment="Left" Margin="90,224,0,2.2" TextWrapping="Wrap" Text ="{Binding Value, ElementName=Aileron_rudder, Mode=OneWay}"  FontSize="25" Width="54"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1">
+            <TextBox x:Name="Aileron_rudder_text_box" HorizontalAlignment="Left" Margin="7,219,0,57.2" TextWrapping="Wrap" Text="{Binding VM_Aileron,  StringFormat={}{0:0.000}}"  FontSize="25" Width="87"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -57,9 +57,9 @@
                 </TextBox.RenderTransform>
             </TextBox>
             <Label x:Name="Rudder_label"  Content="Rudder" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="585,354,0,-55.8" VerticalAlignment="Top" Width="114" Grid.Row="1"/>
-            <TextBox x:Name="Rudder_text_box" HorizontalAlignment="Left" Margin="600,409,0,-173.8" TextWrapping="Wrap" Text ="0"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
+            <TextBox x:Name="Rudder_text_box" Text="{Binding VM_Rudder,  StringFormat={}{0:0.000}}" HorizontalAlignment="Left" Margin="600,409,0,-130.8" TextWrapping="Wrap"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1" />
             <Label x:Name="Elevator_label"  Content="Elevator" FontSize="25" HorizontalAlignment="Left" Height="38" Margin="50,345,0,-43.8" VerticalAlignment="Top" Width="102" Grid.Row="1"/>
-            <TextBox x:Name="Elevator_text_box" HorizontalAlignment="Left" Margin="72,397,0,-161.8" TextWrapping="Wrap" Text ="0"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
+            <TextBox x:Name="Elevator_text_box" Text="{Binding VM_Elevator, StringFormat={}{0:0.000}}" HorizontalAlignment="Left" Margin="72,397,0,-122.8" TextWrapping="Wrap" FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
 
 
 
