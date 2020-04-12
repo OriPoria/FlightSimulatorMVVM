@@ -8,9 +8,9 @@
              d:DesignHeight="450" d:DesignWidth="600">
     <UserControl.Resources>
         <ControlTemplate x:Key="CutomPushpinTemplate" TargetType="m:Pushpin">
-            <Image Source="{StaticResource airplaneicon}">
+            <Image Source="{StaticResource airplaneicon}" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image.RenderTransform>
-                    <RotateTransform Angle="0"/>
+                    <RotateTransform Angle="-10"/>
                 </Image.RenderTransform>
             </Image>
 
@@ -21,30 +21,24 @@
 
     <Grid>
 
-        
+  
+        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Road">
 
-        <TextBlock Text="Latitude:" FontSize="20" Grid.Column="0"/>
+            <TextBlock Text="Latitude: " FontSize="16" Margin="10,480,10,10" />
 
-        <TextBlock x:Name="curLatitude" Text="{Binding Path = VM_latitude, UpdateSourceTrigger = PropertyChanged, Mode = OneWay, StringFormat={}{0:0.000}}" FontSize="20" Grid.Column="1"/>
+            <TextBlock x:Name="curLatitude" FontSize="16" Margin="100,480,10,10" Text="{Binding Path = VM_latitude, UpdateSourceTrigger = PropertyChanged, Mode = OneWay, StringFormat={}{0:0.000}}"/>
 
-        <TextBlock Text="Longitude:" FontSize="20" Grid.Column="2"/>
+            <TextBlock Text="Longitude:" FontSize="16" Grid.Column="2" Grid.Row="2" Margin="10,520,10,10"/>
 
-        <TextBlock x:Name="curLongitude" Text="{Binding Path=VM_longitude, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, StringFormat={}{0:0.000}}" FontSize="20" Grid.Column="3"/>
+            <TextBlock x:Name="curLongitude" FontSize="16" Margin="100,520,10,10" Text="{Binding Path=VM_longitude, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, StringFormat={}{0:0.000}}"/>
 
-        
-        
-        <m:Map x:Name="myMap" CredentialsProvider="AqwuOHx8GTy7qRDjdTCXC7aDLaW9WxT9d1pjdsGridEk9AJGLcJHvNEDyx98vZVi" Mode="Road" Grid.Row="1" Grid.ColumnSpan="4" >
             <m:Pushpin x:Name="pin" Location="{Binding Path=VM_location, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
-               
-                
 
             </m:Pushpin>
 
+            
+        </m:Map>
 
-            </m:Map>
-
-
-     
 
 
 

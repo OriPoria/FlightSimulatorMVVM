@@ -21,8 +21,6 @@ namespace flightSimulator.View.controls
 
     public partial class DashBoard : UserControl
     {
-        private ViewModel dashBoardVM;
-
         public DashBoard()
         {
             InitializeComponent();

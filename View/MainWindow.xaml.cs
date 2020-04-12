@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
-
+using System.Windows.Threading;
 
 namespace flightSimulator
 {
@@ -28,9 +28,15 @@ namespace flightSimulator
         {
             InitializeComponent();
             this.myFilght = ifm;
-            
+            DataContext = (Application.Current as App).MainViewModel;
+            Dispatcher.UnhandledException += ErrorFunc;
 
+        }
 
+        private void ErrorFunc(object sender, DispatcherUnhandledExceptionEventArgs e)
+        {
+            errLab.Visibility = Visibility.Visible;
+            e.Handled = true;
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -38,5 +44,7 @@ namespace flightSimulator
             myFilght.Disconnect();
             App.Current.Shutdown();
         }
+
+
     }
 }

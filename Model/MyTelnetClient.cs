@@ -36,8 +36,8 @@ namespace flightSimulator
                 sw.Flush();
                 readdata = sr.ReadLine();
             }
-            catch (IOException e) { }
-            catch (ObjectDisposedException e) { }
+            catch (IOException) { }
+            catch (ObjectDisposedException) { }
 
         }
         public string Read()

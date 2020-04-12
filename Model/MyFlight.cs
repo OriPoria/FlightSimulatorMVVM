@@ -5,22 +5,23 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Windows.Threading;
+
 
 namespace flightSimulator
 {
     class MyFlight : IFlightModel
     {
         private SimulatorObject[] readFlightObjects;
-        private SimulatorObject[] writeFlightObjects;
-        private Dictionary<string, int> hash = new Dictionary<string, int>();
-        private Queue<string> queueCommands = new Queue<string>();
+        private readonly Dictionary<string, int> hash = new Dictionary<string, int>();
+        private readonly Queue<string> queueCommands = new Queue<string>();
 
         private double throttle;    
         private double rudder;
         private double elevator;
         private double aileron;
 
-        private ITelnetClient myTelnetClient;
+        private readonly ITelnetClient myTelnetClient;
         private volatile Boolean stop;
         
         public event PropertyChangedEventHandler PropertyChanged;
@@ -28,8 +29,10 @@ namespace flightSimulator
         {
             this.myTelnetClient = tc;
             stop = false;
-            initializeObjects();
+            InitializeObjects();            
         }
+
+
         public void Connect(string ip, int port)
         {
             myTelnetClient.Connect(ip, port);
@@ -45,13 +48,22 @@ namespace flightSimulator
                 while (!stop)
                 {
                     var builder = new StringBuilder();
-                    int i = 0;
-                    for (i = 0; i < readFlightObjects.Length; i++)
+                    for (int i = 0; i < readFlightObjects.Length; i++)
                     {
                         builder.Append("get ").Append(readFlightObjects[i].Sim);
                         myTelnetClient.Write(builder.ToString());
+                        try
+                    {
                         string s = myTelnetClient.Read();
                         readFlightObjects[i].Value = Double.Parse(s);
+
+
+                    } catch (Exception exc)
+                    {
+                        Error = exc.Message;
+                        continue;
+                    }
+
                         NotifyPropertyChanged(readFlightObjects[i].Name);
                         builder.Clear();
                         
@@ -63,13 +75,21 @@ namespace flightSimulator
                     myTelnetClient.Write(queueCommands.Dequeue());
                     }
 
-
-
                     Thread.Sleep(250);
                 }
                     
 
         }
+        public string Error
+        {
+  
+            set
+            {
+                NotifyPropertyChanged("error");
+            }
+
+        }
+
         public double Throttle
         {
             get{ return throttle; }
@@ -119,7 +139,7 @@ namespace flightSimulator
         {
             if (this.PropertyChanged != null)
             {   
-                this.PropertyChanged(this, new PropertyChangedEventArgs(proName));
+                PropertyChanged(this, new PropertyChangedEventArgs(proName));
             }
         }
         public double GetData(string str)
@@ -131,7 +151,7 @@ namespace flightSimulator
             queueCommands.Enqueue(command);
         }
 
-        private void initializeObjects()
+        private void InitializeObjects()
         {
             readFlightObjects = new SimulatorObject[] {
                 new SimulatorObject("heading","/instrumentation/heading-indicator/indicated-heading-deg"),
@@ -145,18 +165,10 @@ namespace flightSimulator
                 
                 new SimulatorObject("latitude","/position/latitude-deg"),
                 new SimulatorObject("longitude","/position/longitude-deg") };
-            int i = 0;
-            for (i = 0; i < readFlightObjects.Length; i++)
+            for (int i = 0; i < readFlightObjects.Length; i++)
             {
                 hash.Add(readFlightObjects[i].Name, i);
             }
-            
-            
-            writeFlightObjects = new SimulatorObject[] {
-                new SimulatorObject("throttle","/controls/engines/current-engine/throttle"),
-                new SimulatorObject("aileron","/controls/flight/aileron"),
-                new SimulatorObject("elevator","/controls/flight/elevator"),
-                new SimulatorObject("rudder","/controls/flight/rudder") };
         }
     }
 }

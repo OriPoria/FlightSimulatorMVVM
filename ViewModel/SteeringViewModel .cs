@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
-
+using System.Windows;
 
 namespace flightSimulator
 {
     class SteeringViewModel : ViewModel
     {
-
         private double throttle;
         private double rudder;
         private double elevator;
@@ -22,7 +17,6 @@ namespace flightSimulator
             {
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
-
         }
 
         public double VM_Throttle

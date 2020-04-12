@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Threading;
+using System.Configuration;
+using System.Windows.Media;
+
 
 
 namespace flightSimulator
@@ -23,9 +16,13 @@ namespace flightSimulator
     {
         private MainWindow myMain;
         private IFlightModel myFlight;
+
+        [Obsolete]
         public FirstPage()
         {
             InitializeComponent();
+            ip_textbox.Text = ConfigurationSettings.AppSettings["ip"];
+            port_text_box.Text = ConfigurationSettings.AppSettings["port"];
         }
         public void SetFlight(IFlightModel ifm)
         {
@@ -40,33 +37,41 @@ namespace flightSimulator
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
             int port = Int32.Parse(this.port_text_box.Text);
+            try
+            {
+                myFlight.Connect(this.ip_textbox.Text, port);
+            }
+                catch (Exception) 
+            {
+                Label l = new Label
+                {
+                    Content = "Connection failure",
+                    FontSize = 20,
+                    Foreground = Brushes.Red,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+                };
+                Grid.SetRow(l, 2);
+                Grid.SetColumnSpan(l, 2);
 
+                myGrid.Children.Add(l);
+                return;
+            }
 
-            myFlight.Connect(this.ip_textbox.Text, port);
 
             Thread t = new Thread(new ThreadStart(myFlight.Start));
             t.Start();
 
-            this.Close();
+            this.Hide();
             myMain.Show();
-            
         }
 
-
-
-        private void Button_Click2(object sender, RoutedEventArgs e)
+        private void Window_Closed(object sender, EventArgs e)
         {
-
-            myFlight.Connect("127.0.0.1", 5402);
-
-            Thread t = new Thread(new ThreadStart(myFlight.Start));
-            t.Start();
-
             this.Close();
-            myMain.Show();
-            
-
+            App.Current.Shutdown();
         }
     }
 }

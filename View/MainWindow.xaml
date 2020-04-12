@@ -9,30 +9,39 @@
                 xmlns:v="clr-namespace:flightSimulator.View.controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Closed="Window_Closed">
+
+    <Border Background="Wheat" >
     <Viewbox>
-        <Border>
+        <Border> 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="300"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="300"/>
                 <RowDefinition Height="300"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="500"/>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="290"/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
 
 
 
-            <v:DashBoard x:Name="dash" Grid.Column="2" Grid.Row="0"/>
+            <v:DashBoard x:Name="dash" Grid.Column="2" Grid.Row="1"/>
 
-            <v:Steering Grid.Column="2" Grid.Row="1"/>
+            <v:Steering Grid.Column="2" Grid.Row="2"/>
 
-            <u:Map x:Name="myMapView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+            <u:Map x:Name="myMapView" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"/>
 
 
-        </Grid>
+
+            <Label x:Name="errLab" Content="Err" Visibility="{Binding VM_error, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"
+                   FontSize="30" Foreground="Red" Grid.Row="0" Grid.Column="0">
+            </Label>
+
+            </Grid>
         </Border>
     </Viewbox>
+    </Border>
 
 </Window>

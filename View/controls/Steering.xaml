@@ -1,5 +1,5 @@
 ﻿<UserControl x:Class="flightSimulator.View.controls.Steering"
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -17,12 +17,12 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </Grid.RowDefinitions>
 
 
-            <Slider x:Name="Slider_throttle" Minimum="-1" Value="{Binding Path=VM_Throttle, Mode=TwoWay}" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="447" Margin="181,340,0,-245.8" Grid.Row="1" />
+            <Slider x:Name="Slider_throttle" Minimum="0" Value="{Binding Path=VM_Throttle, Mode=TwoWay}" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="447" Margin="181,340,0,-245.8" Grid.Row="1" />
             <TextBox x:Name="Throttle_text_box" HorizontalAlignment="Left" Margin="403,416,0,-144.8" TextWrapping="Wrap" Text="{Binding VM_Throttle,  StringFormat={}{0:0.000}}"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
             <Label Name="lable_throttle"  Content="Throttle" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="269,426,0,-127.8" VerticalAlignment="Top" Width="114" Grid.Row="1" RenderTransformOrigin="0.255,1.753"/>
 
             <Viewbox Margin="0,-51,-55,150" Grid.RowSpan="2" >
-
+    
                 <Controls:UserControl1 ElevatorValue="{Binding VM_Elevator, Mode=OneWayToSource}" RudderValue="{Binding VM_Rudder, Mode=OneWayToSource}" Height="170" Width="778" RenderTransformOrigin="0.41,0.418"/>
 
             </Viewbox>
