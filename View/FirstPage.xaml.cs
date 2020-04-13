@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Configuration;
+
 
 
 namespace flightSimulator
@@ -26,6 +28,9 @@ namespace flightSimulator
         public FirstPage()
         {
             InitializeComponent();
+         
+            ip_textbox.Text = ConfigurationSettings.AppSettings["ip"];
+            port_text_box.Text = ConfigurationSettings.AppSettings["port"];
         }
         public void setFlight(IFlightModel ifm)
         {
@@ -68,5 +73,7 @@ namespace flightSimulator
             
 
         }
+
+
     }
 }
