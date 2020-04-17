@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
-
-namespace flightSimulator
+namespace FlightSimulator
 {
     public interface IFlightModel : INotifyPropertyChanged
     {
@@ -20,6 +14,8 @@ namespace flightSimulator
         double Rudder { set; get; }
         double Aileron { set; get; }
         double Elevator { set; get; }
+
+        string Error { set; get; }
 
     }
 }

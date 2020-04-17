@@ -6,8 +6,7 @@ using System.Configuration;
 using System.Windows.Media;
 
 
-
-namespace flightSimulator
+namespace FlightSimulator
 {
     /// <summary>
     /// Interaction logic for FirstPage.xaml
@@ -43,7 +42,7 @@ namespace flightSimulator
             {
                 myFlight.Connect(this.ip_textbox.Text, port);
             }
-                catch (Exception) 
+            catch (Exception) 
             {
                 Label l = new Label
                 {

@@ -1,12 +1,12 @@
-﻿<Window x:Class="flightSimulator.MainWindow"
+﻿<Window x:Class="FlightSimulator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
-        xmlns:Controls ="clr-namespace:flightSimulator.controls"
-        xmlns:u="clr-namespace:flightSimulator.View.controls"
-                xmlns:v="clr-namespace:flightSimulator.View.controls"
+        xmlns:Controls ="clr-namespace:FlightSimulator.controls"
+        xmlns:u="clr-namespace:FlightSimulator.View.controls"
+                xmlns:v="clr-namespace:FlightSimulator.View.controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Closed="Window_Closed">
 
@@ -35,11 +35,19 @@
 
 
 
-            <Label x:Name="errLab" Content="Err" Visibility="{Binding VM_error, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"
-                   FontSize="30" Foreground="Red" Grid.Row="0" Grid.Column="0">
+            <Label x:Name="errLab" Content="{Binding VMerrorText, UpdateSourceTrigger=PropertyChanged}" 
+                   Visibility="{Binding VMerror, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"
+                   FontSize="15" Foreground="Red" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">
             </Label>
 
-            </Grid>
+                    <Button x:Name="reconnectBtn" Content="Reconnect" HorizontalAlignment="Center" Width="100" Height="30" 
+                            Click="ReconnectBtn_Click">
+                    </Button>
+                    <Button x:Name="disconnectBtn" Content="Disconnect" HorizontalAlignment="Right" Width="100" Height="30" 
+                            Click="DisconnectBtn_Click">
+                    </Button>
+
+                </Grid>
         </Border>
     </Viewbox>
     </Border>

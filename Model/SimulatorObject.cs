@@ -1,37 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace flightSimulator
+namespace FlightSimulator
 {
     public class SimulatorObject
     {
-        private string name;
-        private string sim;
         private double val;
         public SimulatorObject(string n, string s)
         {
-            this.name = n;
-            this.sim = s;
+            this.Name = n;
+            this.Sim = s;
             this.val = 0;
-
         }
-        public string Sim
-        {
-            get
-            {
-                return this.sim;
-            }
-        }
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-        }
+        public string Sim { get; }
+        public string Name { get; }
         public double Value
         {
             get

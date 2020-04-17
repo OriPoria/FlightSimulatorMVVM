@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Windows;
 
-namespace flightSimulator
+
+namespace FlightSimulator
 {
     class SteeringViewModel : ViewModel
     {
@@ -15,11 +15,11 @@ namespace flightSimulator
             this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                NotifyPropertyChanged("VM_" + e.PropertyName);
+                NotifyPropertyChanged("VM" + e.PropertyName);
             };
         }
 
-        public double VM_Throttle
+        public double VMthrottle
         {
             get
             {
@@ -31,7 +31,7 @@ namespace flightSimulator
                 myModel.Throttle = throttle;
             }
         }
-        public double VM_Rudder
+        public double VMrudder
         {
             get
             {
@@ -43,7 +43,7 @@ namespace flightSimulator
                 myModel.Rudder = rudder;
             }
         }
-        public double VM_Elevator
+        public double VMelevator
         {
             get
             {
@@ -55,7 +55,7 @@ namespace flightSimulator
                 myModel.Elevator = elevator;
             }
         }
-        public double VM_Aileron
+        public double VMaileron
         {
             get
             {
@@ -65,7 +65,6 @@ namespace flightSimulator
             {
                 aileron = value;
                 myModel.Aileron = aileron;
-
             }
         }
 

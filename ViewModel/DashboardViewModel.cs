@@ -1,11 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Windows;
 
-
-
-
-namespace flightSimulator
+namespace FlightSimulator
 {
     public class DashboardViewModel : ViewModel
     {
@@ -14,48 +10,48 @@ namespace flightSimulator
             this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
-                NotifyPropertyChanged("VM_" + e.PropertyName);
+                NotifyPropertyChanged("VM" + e.PropertyName);
             };
 
         }
 
 
-        public double VM_heading
+        public double VMheading
         {
             get { return myModel.GetData("heading"); }
             set { }
         }
-        public double VM_verticalSpeed
+        public double VMverticalSpeed
         {
             get { return myModel.GetData("verticalSpeed"); }
             set { }
         }
-        public double VM_groundSpeed
+        public double VMgroundSpeed
         {
             get { return myModel.GetData("groundSpeed"); }
             set { }
         }
-        public double VM_airSpeed
+        public double VMairSpeed
         {
             get { return myModel.GetData("airSpeed"); }
             set { }
         }
-        public double VM_altitude
+        public double VMaltitude
         {
             get { return myModel.GetData("altitude"); }
             set { }
         }
-        public double VM_roll
+        public double VMroll
         {
             get { return myModel.GetData("roll"); }
             set { }
         }
-        public double VM_pitch
+        public double VMpitch
         {
             get { return myModel.GetData("pitch"); }
             set { }
         }
-        public double VM_altimeter
+        public double VMaltimeter
         {
             get { return myModel.GetData("altimeter"); }
             set { }

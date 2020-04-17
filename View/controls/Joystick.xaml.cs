@@ -1,40 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace flightSimulator.controls
+
+namespace FlightSimulator.controls
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for Joystick.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class Joystick : UserControl
     {
-        public UserControl1()
+        private Point firstPoint = new Point();
+
+        public Joystick()
         {
             InitializeComponent();
         }
-        private void centerKnob_Completed(object sender, EventArgs e) { }
-        private Point firstPoint = new Point();
 
 
         private void Knob_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) { firstPoint = e.GetPosition(this); }
         }
-
-
-
 
         public double ElevatorValue
         {
@@ -45,7 +33,7 @@ namespace flightSimulator.controls
             }
         }
 
-        public static readonly DependencyProperty ElevatorValueProperty = DependencyProperty.Register("ElevatorValue", typeof(double), typeof(UserControl1));
+        public static readonly DependencyProperty ElevatorValueProperty = DependencyProperty.Register("ElevatorValue", typeof(double), typeof(Joystick));
 
 
         public double RudderValue
@@ -57,10 +45,7 @@ namespace flightSimulator.controls
             }
         }
 
-        public static readonly DependencyProperty RudderValueProperty = DependencyProperty.Register("RudderValue", typeof(double), typeof(UserControl1));
-
-
-
+        public static readonly DependencyProperty RudderValueProperty = DependencyProperty.Register("RudderValue", typeof(double), typeof(Joystick));
 
 
 
@@ -72,8 +57,8 @@ namespace flightSimulator.controls
                 double x = e.GetPosition(this).X - firstPoint.X;
                 double y = e.GetPosition(this).Y - firstPoint.Y;
                 double d = Math.Sqrt(x * x + y * y);
-               // if (d < Math.Abs(Base.Width / Knob.Width) / 2)
-               if(d < Base.Width /2)
+
+                if (d < Base.Width / 2)
                 {
                     knobPosition.X = x;
                     knobPosition.Y = y;
