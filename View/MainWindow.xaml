@@ -8,7 +8,7 @@
         xmlns:u="clr-namespace:FlightSimulator.View.controls"
                 xmlns:v="clr-namespace:FlightSimulator.View.controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Closed="Window_Closed">
+        Title="MainWindow" Height="600" Width="800" Closed="WindowClosed">
 
     <Border Background="Wheat" >
     <Viewbox>
@@ -41,10 +41,10 @@
             </Label>
 
                     <Button x:Name="reconnectBtn" Content="Reconnect" HorizontalAlignment="Center" Width="100" Height="30" 
-                            Click="ReconnectBtn_Click">
+                            Click="ReconnectBtnClick">
                     </Button>
                     <Button x:Name="disconnectBtn" Content="Disconnect" HorizontalAlignment="Right" Width="100" Height="30" 
-                            Click="DisconnectBtn_Click">
+                            Click="DisconnectBtnClick">
                     </Button>
 
                 </Grid>

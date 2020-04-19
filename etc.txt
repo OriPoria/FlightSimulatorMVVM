@@ -1,0 +1,7 @@
+206194920,Ori Poria
+314175696,Shmuel Suna
+
+Special features of the program:
+We used a hash map in the model. The key is a string of the name of the simulator object, and the value is a type of simulator object.
+We added a view model to handle the logic of the errors, once the model notify the occurred an error.
+Initialization of the objects in the "App_Startup" method of App.xaml.cs file.

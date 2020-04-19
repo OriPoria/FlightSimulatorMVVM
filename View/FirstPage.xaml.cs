@@ -34,7 +34,7 @@ namespace FlightSimulator
 
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonClick(object sender, RoutedEventArgs e)
         {
 
             int port = Int32.Parse(this.port_text_box.Text);
@@ -67,7 +67,7 @@ namespace FlightSimulator
             myMain.Show();
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+        private void WindowClosed(object sender, EventArgs e)
         {
             this.Close();
             App.Current.Shutdown();

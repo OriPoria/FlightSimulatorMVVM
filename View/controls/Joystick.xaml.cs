@@ -18,8 +18,24 @@ namespace FlightSimulator.controls
             InitializeComponent();
         }
 
+        public static readonly DependencyProperty ElevatorValueProperty = 
+            DependencyProperty.Register("ElevatorValue", typeof(double), typeof(Joystick));
 
-        private void Knob_MouseDown(object sender, MouseButtonEventArgs e)
+
+        public double RudderValue
+        {
+            get { return (double)GetValue(RudderValueProperty); }
+            set
+            {
+                SetValue(RudderValueProperty, value);
+            }
+        }
+
+        public static readonly DependencyProperty RudderValueProperty = 
+            DependencyProperty.Register("RudderValue", typeof(double), typeof(Joystick));
+
+
+        private void KnobMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) { firstPoint = e.GetPosition(this); }
         }
@@ -33,23 +49,7 @@ namespace FlightSimulator.controls
             }
         }
 
-        public static readonly DependencyProperty ElevatorValueProperty = DependencyProperty.Register("ElevatorValue", typeof(double), typeof(Joystick));
-
-
-        public double RudderValue
-        {
-            get { return (double)GetValue(RudderValueProperty); }
-            set
-            {
-                SetValue(RudderValueProperty, value);
-            }
-        }
-
-        public static readonly DependencyProperty RudderValueProperty = DependencyProperty.Register("RudderValue", typeof(double), typeof(Joystick));
-
-
-
-        private void Knob_MouseMove(object sender, MouseEventArgs e)
+        private void KnobMouseMove(object sender, MouseEventArgs e)
         {
 
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -71,15 +71,11 @@ namespace FlightSimulator.controls
 
         }
 
-        private void Knob_MouseUp(object sender, MouseButtonEventArgs e)
+        private void KnobMouseUp(object sender, MouseButtonEventArgs e)
         {
             knobPosition.X = 0;
             knobPosition.Y = 0;
         }
-
-
-
-
 
 
     }

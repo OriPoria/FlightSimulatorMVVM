@@ -17,16 +17,16 @@
             </Grid.RowDefinitions>
 
 
-            <Slider x:Name="Slider_throttle" Minimum="0" Value="{Binding Path=VMthrottle, Mode=TwoWay}" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="447" Margin="181,340,0,-245.8" Grid.Row="1" />
-            <TextBox x:Name="Throttle_text_box" HorizontalAlignment="Left" Margin="403,416,0,-144.8" TextWrapping="Wrap" Text="{Binding VMthrottle,  StringFormat={}{0:0.000}}"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
-            <Label Name="lable_throttle"  Content="Throttle" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="269,426,0,-127.8" VerticalAlignment="Top" Width="114" Grid.Row="1" RenderTransformOrigin="0.255,1.753"/>
+            <Slider x:Name="Slider_throttle" Minimum="0" Value="{Binding Path=VMthrottle, Mode=TwoWay}" Maximum="1" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="455" Margin="181,202.6,0,-109.173" Grid.Row="1" />
+            <TextBox x:Name="Throttle_text_box" HorizontalAlignment="Left" Margin="403,243,0,-1.2" TextWrapping="Wrap" Text="{Binding VMthrottle,  StringFormat={}{0:0.000}}"  FontSize="30" Width="124"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
+            <Label Name="lable_throttle"  Content="Throttle" FontSize="30" HorizontalAlignment="Left" Height="55" Margin="282,243,0,0" VerticalAlignment="Top" Width="137" Grid.Row="1" RenderTransformOrigin="0.255,1.753"/>
 
             <Viewbox Margin="0,-51,-55,150" Grid.RowSpan="2" >
 
                 <Controls:Joystick ElevatorValue="{Binding VMelevator, Mode=OneWayToSource}" RudderValue="{Binding VMrudder, Mode=OneWayToSource}" Height="170" Width="778" RenderTransformOrigin="0.41,0.418"/>
 
             </Viewbox>
-            <Slider x:Name="Aileron_slider" Minimum="-1" Maximum="1" Value="{Binding Path=VMaileron, Mode=TwoWay}" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="406"  Margin="-16,101,0,137.2" RenderTransformOrigin="0.5,0.5" Grid.Row="1" >
+            <Slider x:Name="Aileron_slider" Minimum="-1" Maximum="1" Value="{Binding Path=VMaileron, Mode=TwoWay}" HorizontalAlignment="Left" TickPlacement="TopLeft" TickFrequency="0.1" Width="406"  Margin="-36,282,0,266.4" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" >
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -36,7 +36,7 @@
                     </TransformGroup>
                 </Slider.RenderTransform>
             </Slider>
-            <Label x:Name="lable_Aileron"  Content="Aileron" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="9,147,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Label x:Name="lable_Aileron"  Content="Aileron" FontSize="30" HorizontalAlignment="Left" Height="63" Margin="14,233,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -46,7 +46,7 @@
                     </TransformGroup>
                 </Label.RenderTransform>
             </Label>
-            <TextBox x:Name="Aileron_rudder_text_box" HorizontalAlignment="Left" Margin="7,219,0,57.2" TextWrapping="Wrap" Text="{Binding VMaileron,  StringFormat={}{0:0.000}}"  FontSize="25" Width="87"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1">
+            <TextBox x:Name="Aileron_rudder_text_box" HorizontalAlignment="Left" Margin="7,22,0,233.4" TextWrapping="Wrap" Text="{Binding VMaileron,  StringFormat={}{0:0.000}}"  FontSize="30" Width="137"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -56,10 +56,28 @@
                     </TransformGroup>
                 </TextBox.RenderTransform>
             </TextBox>
-            <Label x:Name="Rudder_label"  Content="Rudder" FontSize="25" HorizontalAlignment="Left" Height="41" Margin="585,354,0,-55.8" VerticalAlignment="Top" Width="114" Grid.Row="1"/>
-            <TextBox x:Name="Rudder_text_box" Text="{Binding VMrudder,  StringFormat={}{0:0.000}}" HorizontalAlignment="Left" Margin="600,409,0,-130.8" TextWrapping="Wrap"  FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1" />
-            <Label x:Name="Elevator_label"  Content="Elevator" FontSize="25" HorizontalAlignment="Left" Height="38" Margin="50,345,0,-43.8" VerticalAlignment="Top" Width="102" Grid.Row="1"/>
-            <TextBox x:Name="Elevator_text_box" Text="{Binding VMelevator, StringFormat={}{0:0.000}}" HorizontalAlignment="Left" Margin="72,397,0,-122.8" TextWrapping="Wrap" FontSize="25" Width="81"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
+            <Label x:Name="Rudder_label"  Content="Rudder" FontSize="30" HorizontalAlignment="Left" Height="48" Margin="267,31,0,0" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.508"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="Rudder_text_box" Text="{Binding VMrudder,  StringFormat={}{0:0.000}}" HorizontalAlignment="Left" Margin="405,32,0,203" TextWrapping="Wrap"  FontSize="30" Width="115"  RenderTransformOrigin="-1.011,0.536" />
+            <Label x:Name="Elevator_label"  Content="Elevator" FontSize="30" HorizontalAlignment="Left" Height="60" Margin="563,224,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.754"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="Elevator_text_box" Text="{Binding VMelevator, StringFormat={}{0:0.000}}" HorizontalAlignment="Left" Margin="571,22,0,233.4" TextWrapping="Wrap" FontSize="30" Width="124"  RenderTransformOrigin="-1.011,0.536" Grid.Row="1"/>
 
 
 

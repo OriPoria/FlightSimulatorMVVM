@@ -14,6 +14,7 @@ namespace FlightSimulator
             this.myModel = m;
             myModel.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
+                //if we got an error from the model as the property that changed we active the label in the view
                 if (e.PropertyName == "error")
                 {
                     errStr = myModel.Error;

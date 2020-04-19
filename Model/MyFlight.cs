@@ -119,6 +119,11 @@ namespace FlightSimulator
                 {
                     CallErrorAsync("ERR: Server is not available");
                 }
+                //general exception
+                catch (Exception)
+                {
+                    CallErrorAsync("Err");
+                }
                 Thread.Sleep(250);
             }
         }

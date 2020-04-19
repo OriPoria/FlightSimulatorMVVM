@@ -43,11 +43,11 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="70"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="indicated-heading-deg: " Grid.Row="0">
+                <TextBlock Text="Heading: " Grid.Row="0">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -61,7 +61,7 @@
 
 
 
-                <TextBlock Text="gps_indicated-vertical-speed: " Grid.Row="1">
+                <TextBlock Text="Vertical speed: " Grid.Row="1">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -74,7 +74,7 @@
                 <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="1"/>
 
 
-                <TextBlock Text="gps_indicated-ground-speed-kt: " Grid.Row="2">
+                <TextBlock Text="Ground speed: " Grid.Row="2">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -87,7 +87,7 @@
                 <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="2"/>
 
 
-                <TextBlock Text="airspeed-indicator_indicated-speed-kt: " Grid.Row="3">
+                <TextBlock Text="Airspeed: " Grid.Row="3">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -100,7 +100,7 @@
                 <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="3"/>
 
 
-                <TextBlock Text="gps_indicated-altitude-ft: " Grid.Row="4">
+                <TextBlock Text="GPS altitude: " Grid.Row="4">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -113,7 +113,7 @@
                 <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="4"/>
 
 
-                <TextBlock Text="attitude-indicator_internal-roll-deg: " Grid.Row="5">
+                <TextBlock Text="Internal roll: " Grid.Row="5">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -126,7 +126,7 @@
                 <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="5"/>
 
 
-                <TextBlock Text="attitude-indicator_internal-pitch-deg: " Grid.Row="6">
+                <TextBlock Text="Internal pitch: " Grid.Row="6">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
@@ -139,7 +139,7 @@
                 <Border BorderBrush="Black" BorderThickness="2" Grid.Column="1" Grid.Row="6"/>
 
 
-                <TextBlock Text="altimeter_indicated-altitude-ft: " Grid.Row="7">
+                <TextBlock Text="Altimeter altitude: " Grid.Row="7">
                     <TextBlock.Style>
                         <Style BasedOn="{StaticResource textBlockStyle}" TargetType="{x:Type TextBlock}"/>
                     </TextBlock.Style>
